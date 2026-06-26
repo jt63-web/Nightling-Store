@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import type { Light } from '@/lib/products';
 
-const TABS = ['Materials', 'Certifications', 'Care', "What's in the box"] as const;
+const TABS = ['Materials', 'Care', "What's in the box"] as const;
 type Tab = (typeof TABS)[number];
 
 interface SafetyDeckProps {
@@ -26,29 +26,6 @@ export function SafetyDeck({ light }: SafetyDeckProps) {
             </li>
           ))}
         </ul>
-      </div>
-    ),
-    Certifications: (
-      <div className="space-y-3">
-        {light.certifications.map((cert) => (
-          <div
-            key={cert}
-            className="flex items-center gap-3 p-4 rounded-2xl border mode-transition"
-            style={{ borderColor: 'var(--border)', backgroundColor: 'var(--bg-card)' }}
-          >
-            <span className="font-display text-2xl" style={{ color: 'var(--accent)' }}>{cert}</span>
-            <div>
-              <p className="font-body text-sm font-medium mode-transition" style={{ color: 'var(--text-primary)' }}>
-                {cert === 'CE' ? 'European Conformity' : cert === 'FCC' ? 'FCC Declaration' : cert}
-              </p>
-              <p className="font-body text-xs mode-transition" style={{ color: 'var(--text-secondary)' }}>
-                {cert === 'CE' ? 'Meets EU safety, health, and environmental requirements' :
-                 cert === 'FCC' ? 'Complies with US electromagnetic interference regulations' :
-                 cert === 'RoHS' ? 'Restriction of Hazardous Substances compliant' : ''}
-              </p>
-            </div>
-          </div>
-        ))}
       </div>
     ),
     Care: (

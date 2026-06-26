@@ -12,11 +12,11 @@ const sections = [
   },
   {
     title: 'LED safety',
-    content: `Nightling lights use warm-white LEDs at 2700K colour temperature. They emit no UV radiation and are designed to be gentle on developing eyes. The LEDs are rated at 0.5 lux at minimum brightness, which is below the threshold that suppresses melatonin in young children.`,
+    content: `Nightling lights use warm-white LEDs designed to be gentle on developing eyes. They emit no UV radiation and no flicker. The warmest brightness setting has the lowest effect on melatonin, making it the most sleep-friendly choice for overnight use.`,
   },
   {
     title: 'Electrical safety',
-    content: `All Nightling lights are certified CE, FCC, and RoHS compliant. The built-in lithium-ion battery is protected by an over-charge and over-discharge circuit. Charging via USB-C (5V/1A) takes approximately 2 hours. Do not charge with a power adapter exceeding 5V/2A.`,
+    content: `The built-in lithium-ion battery is protected by an over-charge and over-discharge circuit. Charging via USB-C (5V/1A) takes approximately 2 hours. Do not charge with a power adapter exceeding 5V/2A.`,
   },
   {
     title: 'Age suitability',

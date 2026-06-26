@@ -47,7 +47,7 @@ export function StarsBackground() {
             cx={s.x}
             cy={s.y}
             r={s.r}
-            fill="#E8E1FF"
+            fill="rgba(232,225,255,0.25)"
             style={{
               animation: `drift-star ${s.dur}s ${s.delay}s ease-in-out infinite`,
             }}

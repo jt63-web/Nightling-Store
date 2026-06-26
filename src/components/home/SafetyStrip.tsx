@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 
 const FEATURES = [
   { icon: '◉', label: 'BPA-free silicone' },
-  { icon: '✓', label: 'CE & FCC certified' },
   { icon: '⏱', label: '12-hr battery' },
   { icon: '⚡', label: 'USB-C rechargeable' },
   { icon: '☀', label: 'Tap to cycle brightness' },
