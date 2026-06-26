@@ -2,26 +2,109 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── CSS Custom Properties ─────────────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Day Mode defaults */
+  --bg-page:        #FFF8F0;
+  --bg-card:        #FFFBF0;
+  --bg-subtle:      #FFE9B8;
+  --text-primary:   #1F2A44;
+  --text-secondary: #3A4663;
+  --accent:         #FFD78E;
+  --accent-strong:  #FFB957;
+  --border:         rgba(31,42,68,0.1);
+  --shadow-card:    0 4px 20px rgba(31,42,68,0.06);
+  --shadow-glow:    0 8px 40px rgba(255,215,142,0.45);
+
+  --transition-mode: color 800ms ease-out, background-color 800ms ease-out,
+                     border-color 800ms ease-out, box-shadow 800ms ease-out;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+[data-mode="night"] {
+  --bg-page:        #0B1226;
+  --bg-card:        #1A2440;
+  --bg-subtle:      #2A3556;
+  --text-primary:   #E8E1FF;
+  --text-secondary: #B8B0D8;
+  --accent:         #FFB957;
+  --accent-strong:  #FFE0A8;
+  --border:         rgba(232,225,255,0.08);
+  --shadow-card:    0 4px 20px rgba(0,0,0,0.4);
+  --shadow-glow:    0 0 60px rgba(255,185,87,0.35);
+}
+
+/* ─── Base resets ────────────────────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  line-height: 1.7;
+  transition: var(--transition-mode);
+  -webkit-font-smoothing: antialiased;
 }
 
+/* ─── Typography ─────────────────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-fraunces), Georgia, serif;
+  line-height: 1.2;
+  font-weight: 400;
+  color: var(--text-primary);
+  transition: color 800ms ease-out;
+}
+
+/* ─── Utility layer ──────────────────────────────────────────────────────── */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+
+  .mode-transition {
+    transition: var(--transition-mode);
+  }
+
+  .bg-page    { background-color: var(--bg-page); }
+  .bg-card    { background-color: var(--bg-card); }
+  .bg-subtle  { background-color: var(--bg-subtle); }
+  .text-page  { color: var(--text-primary); }
+  .text-muted { color: var(--text-secondary); }
+  .accent     { color: var(--accent); }
+  .border-subtle { border-color: var(--border); }
+
+  .shadow-mode-card { box-shadow: var(--shadow-card); }
+  .shadow-mode-glow { box-shadow: var(--shadow-glow); }
+}
+
+/* ─── Journal prose ─────────────────────────────────────────────────────── */
+.prose-nightling p {
+  margin-bottom: 1.5em;
+}
+
+.prose-nightling h2 {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-top: 2.5em;
+  margin-bottom: 0.75em;
+  transition: color 800ms ease-out;
+}
+
+.prose-nightling em {
+  font-style: italic;
+  color: var(--text-primary);
+}
+
+/* ─── Scrollbar (subtle) ─────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
 }
