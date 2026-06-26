@@ -6,6 +6,7 @@ import { useCartStore } from '@/lib/stores/cart';
 import { ModeToggle } from './ModeToggle';
 import { CurrencyPicker } from './CurrencyPicker';
 import { CloudLogo } from '@/components/shared/CloudLogo';
+import { MegaMenu } from './MegaMenu';
 
 export function Navbar() {
   const { totalItems, toggleCart } = useCartStore();
@@ -37,8 +38,8 @@ export function Navbar() {
 
           {/* Nav links */}
           <nav className="hidden md:flex items-center gap-8">
+            <MegaMenu />
             {[
-              { href: '/collection', label: 'Collection' },
               { href: '/our-story', label: 'Our Story' },
               { href: '/safety', label: 'Safety' },
               { href: '/journal', label: 'Journal' },
