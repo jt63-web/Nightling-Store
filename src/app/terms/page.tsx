@@ -23,7 +23,7 @@ export default function TermsPage() {
           },
           {
             heading: 'Pricing',
-            body: 'All prices are listed in Australian Dollars (AUD) unless otherwise stated. Prices displayed in other currencies are indicative only and may vary based on exchange rates at the time of settlement. Shipping is always free — no minimum order and no code required.',
+            body: 'All prices are listed in United States Dollars (USD) unless otherwise stated. Prices displayed in other currencies are indicative only and may vary based on exchange rates at the time of settlement. Shipping is always free — no minimum order and no code required.',
           },
           {
             heading: 'Shipping',
@@ -47,7 +47,7 @@ export default function TermsPage() {
           },
           {
             heading: 'Governing law',
-            body: 'These terms are governed by the laws of Victoria, Australia. Any disputes will be subject to the jurisdiction of the courts of Victoria.',
+            body: 'These terms are governed by applicable law in the jurisdiction where Nightling operates. Any disputes will be resolved in good faith. If a resolution cannot be reached, disputes will be subject to binding arbitration or the courts of the applicable jurisdiction.',
           },
         ].map(({ heading, body }) => (
           <section key={heading}>
