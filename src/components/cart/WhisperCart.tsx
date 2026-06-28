@@ -100,10 +100,7 @@ export function WhisperCart() {
                 </div>
               ) : (
                 items.map((item) => (
-                  <div
-                    key={`${item.slug}-${item.color}`}
-                    className="flex gap-4"
-                  >
+                  <div key={item.slug} className="flex gap-4">
                     <div
                       className="w-16 h-16 rounded-2xl overflow-hidden flex-shrink-0 relative"
                       style={{ backgroundColor: 'var(--bg-subtle)' }}
@@ -123,16 +120,13 @@ export function WhisperCart() {
                       >
                         {item.name}
                       </p>
-                      <p className="font-body text-xs mode-transition" style={{ color: 'var(--text-secondary)' }}>
-                        {item.color}
-                      </p>
                       <div className="flex items-center gap-3 mt-2">
                         <div
                           className="flex items-center border rounded-full overflow-hidden"
                           style={{ borderColor: 'var(--border)' }}
                         >
                           <button
-                            onClick={() => updateQty(item.slug, item.color, item.qty - 1)}
+                            onClick={() => updateQty(item.slug, item.qty - 1)}
                             className="w-7 h-7 flex items-center justify-center text-sm hover:opacity-60 transition-opacity"
                             style={{ color: 'var(--text-secondary)' }}
                           >
@@ -142,7 +136,7 @@ export function WhisperCart() {
                             {item.qty}
                           </span>
                           <button
-                            onClick={() => updateQty(item.slug, item.color, item.qty + 1)}
+                            onClick={() => updateQty(item.slug, item.qty + 1)}
                             className="w-7 h-7 flex items-center justify-center text-sm hover:opacity-60 transition-opacity"
                             style={{ color: 'var(--text-secondary)' }}
                           >
@@ -150,7 +144,7 @@ export function WhisperCart() {
                           </button>
                         </div>
                         <button
-                          onClick={() => removeItem(item.slug, item.color)}
+                          onClick={() => removeItem(item.slug)}
                           className="text-xs hover:opacity-60 transition-opacity"
                           style={{ color: 'var(--text-secondary)' }}
                         >

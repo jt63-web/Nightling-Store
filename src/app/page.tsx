@@ -1,6 +1,5 @@
 import { RoomScene } from '@/components/hero/RoomScene';
 import { EditorialIntro } from '@/components/home/EditorialIntro';
-import { MoodReel } from '@/components/home/MoodReel';
 import { GlowDemo } from '@/components/product/GlowDemo';
 import { SafetyStrip } from '@/components/home/SafetyStrip';
 import { BedroomWall } from '@/components/home/BedroomWall';
@@ -12,7 +11,6 @@ export default function Home() {
     <main>
       <RoomScene />
       <EditorialIntro />
-      <MoodReel />
       <GlowDemo />
       <SafetyStrip />
       <BedroomWall />

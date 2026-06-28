@@ -1,12 +1,10 @@
 import type { Metadata } from 'next';
 import { lights } from '@/lib/products';
-import { moods } from '@/lib/moods';
-import { MoodCard } from '@/components/collection/MoodCard';
 import { CollectionGrid } from '@/components/collection/CollectionGrid';
 
 export const metadata: Metadata = {
-  title: 'The Collection',
-  description: 'Browse all Nightling silicone night lights — sorted by mood, character, and sleep stage.',
+  title: 'The Collection — Nightling',
+  description: 'Browse all Nightling silicone night lights — rechargeable, BPA-free, and gentle on little eyes.',
 };
 
 export default function CollectionPage() {
@@ -29,35 +27,11 @@ export default function CollectionPage() {
           className="font-body text-lg max-w-xl leading-relaxed mode-transition"
           style={{ color: 'var(--text-secondary)' }}
         >
-          Every Nightling light is made from soft food-grade silicone, rechargeable via USB-C, and designed to be gentle on little eyes. Browse by mood, or scroll through the full range.
+          Every Nightling light is made from soft food-grade silicone, rechargeable via USB-C, and designed to be gentle on little eyes.
         </p>
       </div>
 
-      {/* Mood navigation */}
-      <section className="mb-20">
-        <h2
-          className="font-display text-2xl mb-8 mode-transition"
-          style={{ color: 'var(--text-primary)' }}
-        >
-          Browse by mood
-        </h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {moods.map((mood) => (
-            <MoodCard key={mood.slug} mood={mood} />
-          ))}
-        </div>
-      </section>
-
-      {/* All lights */}
-      <section>
-        <h2
-          className="font-display text-2xl mb-8 mode-transition"
-          style={{ color: 'var(--text-primary)' }}
-        >
-          All lights
-        </h2>
-        <CollectionGrid lights={lights} />
-      </section>
+      <CollectionGrid lights={lights} />
     </main>
   );
 }

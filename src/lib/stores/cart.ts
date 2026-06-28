@@ -4,8 +4,6 @@ import { persist } from 'zustand/middleware';
 export type CartItem = {
   slug: string;
   name: string;
-  color: string;
-  colorHex: string;
   price: number; // AUD cents
   qty: number;
   image: string;
@@ -15,8 +13,8 @@ interface CartStore {
   items: CartItem[];
   isOpen: boolean;
   addItem: (item: Omit<CartItem, 'qty'>) => void;
-  removeItem: (slug: string, color: string) => void;
-  updateQty: (slug: string, color: string, qty: number) => void;
+  removeItem: (slug: string) => void;
+  updateQty: (slug: string, qty: number) => void;
   clearCart: () => void;
   openCart: () => void;
   closeCart: () => void;
@@ -33,15 +31,11 @@ export const useCartStore = create<CartStore>()(
 
       addItem: (item) =>
         set((s) => {
-          const existing = s.items.find(
-            (i) => i.slug === item.slug && i.color === item.color
-          );
+          const existing = s.items.find((i) => i.slug === item.slug);
           if (existing) {
             return {
               items: s.items.map((i) =>
-                i.slug === item.slug && i.color === item.color
-                  ? { ...i, qty: i.qty + 1 }
-                  : i
+                i.slug === item.slug ? { ...i, qty: i.qty + 1 } : i
               ),
               isOpen: true,
             };
@@ -49,19 +43,17 @@ export const useCartStore = create<CartStore>()(
           return { items: [...s.items, { ...item, qty: 1 }], isOpen: true };
         }),
 
-      removeItem: (slug, color) =>
+      removeItem: (slug) =>
         set((s) => ({
-          items: s.items.filter((i) => !(i.slug === slug && i.color === color)),
+          items: s.items.filter((i) => i.slug !== slug),
         })),
 
-      updateQty: (slug, color, qty) =>
+      updateQty: (slug, qty) =>
         set((s) => ({
           items:
             qty <= 0
-              ? s.items.filter((i) => !(i.slug === slug && i.color === color))
-              : s.items.map((i) =>
-                  i.slug === slug && i.color === color ? { ...i, qty } : i
-                ),
+              ? s.items.filter((i) => i.slug !== slug)
+              : s.items.map((i) => (i.slug === slug ? { ...i, qty } : i)),
         })),
 
       clearCart: () => set({ items: [] }),
@@ -74,7 +66,7 @@ export const useCartStore = create<CartStore>()(
         get().items.reduce((sum, i) => sum + i.price * i.qty, 0),
     }),
     {
-      name: 'nightling-cart-v1',
+      name: 'nightling-cart-v2',
       skipHydration: true,
     }
   )

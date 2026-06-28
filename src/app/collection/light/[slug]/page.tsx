@@ -38,10 +38,9 @@ export default function LightPage({ params }: { params: { slug: string } }) {
             description: light.description,
             brand: { '@type': 'Brand', name: 'Nightling' },
             offers: {
-              '@type': 'AggregateOffer',
+              '@type': 'Offer',
               priceCurrency: 'AUD',
-              lowPrice: (light.variants[0].price / 100).toFixed(2),
-              offerCount: light.variants.length,
+              price: (light.price / 100).toFixed(2),
             },
             aggregateRating: {
               '@type': 'AggregateRating',

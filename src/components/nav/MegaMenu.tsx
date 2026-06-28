@@ -5,19 +5,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { lights } from '@/lib/products';
-import { moods } from '@/lib/moods';
 
 const OTHER_LINKS = [
   { href: '/our-story', label: 'Our Story', desc: 'How Nightling began' },
   { href: '/safety', label: 'Safety', desc: 'Materials & care' },
   { href: '/journal', label: 'Journal', desc: 'Sleep science & tips' },
 ];
-
-// Group lights by mood
-const byMood = moods.map((mood) => ({
-  mood,
-  lights: lights.filter((l) => l.mood === mood.slug),
-})).filter((g) => g.lights.length > 0);
 
 export function MegaMenu() {
   const [open, setOpen] = useState(false);
@@ -64,7 +57,7 @@ export function MegaMenu() {
             exit={{ opacity: 0, y: 8 }}
             transition={{ duration: 0.18 }}
             className="absolute left-1/2 -translate-x-1/2 top-full mt-3 z-50 mode-transition"
-            style={{ width: 620 }}
+            style={{ width: 580 }}
           >
             {/* Arrow */}
             <div className="flex justify-center mb-1">
@@ -84,69 +77,37 @@ export function MegaMenu() {
             >
               {/* Products grid */}
               <div className="p-5">
-                <p
-                  className="font-body text-xs tracking-widest uppercase mb-4 mode-transition"
-                  style={{ color: 'var(--text-secondary)', opacity: 0.5 }}
-                >
-                  Shop by mood
-                </p>
-                <div className="space-y-5">
-                  {byMood.map(({ mood, lights: moodLights }) => (
-                    <div key={mood.slug}>
-                      <Link
-                        href={`/collection/${mood.slug}`}
-                        onClick={() => setOpen(false)}
-                        className="font-body text-xs font-semibold uppercase tracking-wider mb-2 block hover:opacity-70 transition-opacity mode-transition"
-                        style={{ color: 'var(--accent)' }}
+                <div className="grid grid-cols-5 gap-2">
+                  {lights.map((light) => (
+                    <Link
+                      key={light.slug}
+                      href={`/collection/light/${light.slug}`}
+                      onClick={() => setOpen(false)}
+                      className="flex flex-col items-center gap-1.5 p-2 rounded-xl hover:opacity-80 transition-opacity"
+                      style={{ backgroundColor: 'var(--bg-subtle)' }}
+                    >
+                      <div
+                        className="w-12 h-12 rounded-lg overflow-hidden relative flex-shrink-0"
+                        style={{ backgroundColor: 'var(--bg-page)' }}
                       >
-                        {mood.name} →
-                      </Link>
-                      <div className="grid grid-cols-3 gap-2">
-                        {moodLights.map((light) => (
-                          <Link
-                            key={light.slug}
-                            href={`/collection/light/${light.slug}`}
-                            onClick={() => setOpen(false)}
-                            className="flex items-center gap-2.5 p-2 rounded-xl hover:opacity-80 transition-opacity group"
-                            style={{ backgroundColor: 'var(--bg-subtle)' }}
-                          >
-                            <div
-                              className="flex-shrink-0 w-8 h-8 rounded-lg overflow-hidden relative"
-                              style={{ backgroundColor: 'var(--bg-page)' }}
-                            >
-                              <Image
-                                src={light.images.off}
-                                alt={light.name}
-                                fill
-                                className="object-contain p-0.5"
-                                sizes="32px"
-                              />
-                            </div>
-                            <div className="min-w-0">
-                              <p
-                                className="font-body text-xs font-medium truncate mode-transition"
-                                style={{ color: 'var(--text-primary)' }}
-                              >
-                                {light.name}
-                              </p>
-                              <div className="flex gap-0.5 mt-0.5">
-                                {light.variants.slice(0, 3).map((v) => (
-                                  <span
-                                    key={v.color}
-                                    className="w-2 h-2 rounded-full"
-                                    style={{ backgroundColor: v.colorHex }}
-                                  />
-                                ))}
-                              </div>
-                            </div>
-                          </Link>
-                        ))}
+                        <Image
+                          src={light.images.off}
+                          alt={light.name}
+                          fill
+                          className="object-contain p-0.5"
+                          sizes="48px"
+                        />
                       </div>
-                    </div>
+                      <p
+                        className="font-body text-[10px] text-center leading-tight mode-transition line-clamp-2"
+                        style={{ color: 'var(--text-primary)' }}
+                      >
+                        {light.name}
+                      </p>
+                    </Link>
                   ))}
                 </div>
 
-                {/* View all */}
                 <Link
                   href="/collection"
                   onClick={() => setOpen(false)}

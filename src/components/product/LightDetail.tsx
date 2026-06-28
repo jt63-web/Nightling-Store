@@ -39,9 +39,7 @@ export function LightDetail({ light, related }: LightDetailProps) {
   const rate = getRate();
   const addItem = useCartStore((s) => s.addItem);
 
-  const [selectedVariantIdx, setSelectedVariantIdx] = useState(0);
-  const variant = light.variants[selectedVariantIdx];
-  const price = formatPrice(variant.price, currency as Currency, rate);
+  const price = formatPrice(light.price, currency as Currency, rate);
 
   const photos = [
     { src: light.images.off, label: 'Off' },
@@ -50,13 +48,11 @@ export function LightDetail({ light, related }: LightDetailProps) {
     { src: light.images.room, label: 'Lifestyle' },
   ];
 
-  // In night mode, default to the "on" photo (index 1)
   const [activeImage, setActiveImage] = useState(isNight ? 1 : 0);
-
   const [added, setAdded] = useState(false);
 
   function handleAddToCart() {
-    addItem({ slug: light.slug, name: light.name, color: variant.color, colorHex: variant.colorHex, price: variant.price, image: light.images.off });
+    addItem({ slug: light.slug, name: light.name, price: light.price, image: light.images.off });
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);
   }
@@ -78,7 +74,6 @@ export function LightDetail({ light, related }: LightDetailProps) {
       <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-2 gap-16">
         {/* Gallery */}
         <div className="space-y-4">
-          {/* Main image */}
           <div
             className="rounded-3xl overflow-hidden aspect-square relative mode-transition"
             style={{ backgroundColor: 'var(--bg-card)', border: '1px solid var(--border)' }}
@@ -103,7 +98,6 @@ export function LightDetail({ light, related }: LightDetailProps) {
               </motion.div>
             </AnimatePresence>
 
-            {/* Glow effect in night mode when showing "on" photo */}
             {isNight && activeImage === 1 && (
               <div
                 className="absolute inset-0 pointer-events-none rounded-3xl"
@@ -111,7 +105,6 @@ export function LightDetail({ light, related }: LightDetailProps) {
               />
             )}
 
-            {/* Mode hint badge */}
             <div
               className="absolute top-4 right-4 font-body text-xs px-3 py-1.5 rounded-full mode-transition"
               style={{ backgroundColor: isNight ? 'rgba(255,185,87,0.15)' : 'rgba(255,255,255,0.7)', color: 'var(--text-secondary)' }}
@@ -147,11 +140,7 @@ export function LightDetail({ light, related }: LightDetailProps) {
 
         {/* Product info */}
         <div className="flex flex-col gap-6">
-          {/* Header */}
           <div>
-            <p className="font-body text-xs tracking-widest uppercase mb-3 mode-transition" style={{ color: 'var(--text-secondary)', opacity: 0.6 }}>
-              {light.mood.replace(/-/g, ' ')}
-            </p>
             <h1 className="font-display text-4xl lg:text-5xl mb-3 mode-transition" style={{ color: 'var(--text-primary)' }}>
               {light.name}
             </h1>
@@ -160,7 +149,6 @@ export function LightDetail({ light, related }: LightDetailProps) {
             </p>
           </div>
 
-          {/* Rating */}
           <div className="flex items-center gap-3">
             <StarRating rating={light.rating} />
             <span className="font-body text-sm mode-transition" style={{ color: 'var(--text-secondary)' }}>
@@ -168,60 +156,33 @@ export function LightDetail({ light, related }: LightDetailProps) {
             </span>
           </div>
 
-          {/* Price */}
-          <div>
-            <span className="font-display text-3xl mode-transition" style={{ color: 'var(--text-primary)' }}>
-              {price}
-            </span>
-          </div>
-
-          {/* Colour variants */}
-          <div>
-            <p className="font-body text-sm mb-3 mode-transition" style={{ color: 'var(--text-secondary)' }}>
-              Colour: <span style={{ color: 'var(--text-primary)' }}>{variant.color}</span>
-            </p>
-            <div className="flex gap-2">
-              {light.variants.map((v, i) => (
-                <button
-                  key={v.color}
-                  onClick={() => setSelectedVariantIdx(i)}
-                  title={v.color}
-                  className="w-9 h-9 rounded-full transition-transform hover:scale-110"
-                  style={{
-                    backgroundColor: v.colorHex,
-                    outline: i === selectedVariantIdx ? `3px solid var(--accent)` : '3px solid transparent',
-                    outlineOffset: '2px',
-                  }}
-                />
-              ))}
-            </div>
-          </div>
+          <span className="font-display text-3xl mode-transition" style={{ color: 'var(--text-primary)' }}>
+            {price}
+          </span>
 
           {/* Add to cart */}
-          <div className="flex gap-3">
-            <motion.button
-              onClick={handleAddToCart}
-              whileTap={{ scale: 0.97 }}
-              className="flex-1 py-4 rounded-2xl font-body font-semibold text-base mode-transition"
-              style={{
-                backgroundColor: isNight ? 'rgba(255,185,87,0.15)' : 'var(--text-primary)',
-                color: isNight ? 'var(--accent)' : 'var(--bg-page)',
-                border: isNight ? '1.5px solid var(--accent)' : 'none',
-              }}
-            >
-              <AnimatePresence mode="wait">
-                <motion.span
-                  key={added ? 'added' : 'add'}
-                  initial={{ opacity: 0, y: 4 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -4 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  {added ? '✓ Added to cart' : 'Add to cart'}
-                </motion.span>
-              </AnimatePresence>
-            </motion.button>
-          </div>
+          <motion.button
+            onClick={handleAddToCart}
+            whileTap={{ scale: 0.97 }}
+            className="py-4 rounded-2xl font-body font-semibold text-base mode-transition"
+            style={{
+              backgroundColor: isNight ? 'rgba(255,185,87,0.15)' : 'var(--text-primary)',
+              color: isNight ? 'var(--accent)' : 'var(--bg-page)',
+              border: isNight ? '1.5px solid var(--accent)' : 'none',
+            }}
+          >
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={added ? 'added' : 'add'}
+                initial={{ opacity: 0, y: 4 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -4 }}
+                transition={{ duration: 0.2 }}
+              >
+                {added ? '✓ Added to cart' : 'Add to cart'}
+              </motion.span>
+            </AnimatePresence>
+          </motion.button>
 
           {/* Key features */}
           <div
@@ -236,12 +197,10 @@ export function LightDetail({ light, related }: LightDetailProps) {
             ))}
           </div>
 
-          {/* Description */}
           <p className="font-body leading-relaxed mode-transition" style={{ color: 'var(--text-secondary)' }}>
             {light.description}
           </p>
 
-          {/* Specs */}
           <div className="grid grid-cols-2 gap-3">
             {[
               { label: 'Dimensions', value: light.dimensions },
@@ -310,7 +269,7 @@ export function LightDetail({ light, related }: LightDetailProps) {
                     </div>
                     <p className="font-display text-base mode-transition" style={{ color: 'var(--text-primary)' }}>{r.name}</p>
                     <p className="font-body text-xs mt-0.5 mode-transition" style={{ color: 'var(--text-secondary)' }}>
-                      {formatPrice(r.variants[0].price, currency as Currency, rate)}
+                      {formatPrice(r.price, currency as Currency, rate)}
                     </p>
                   </motion.div>
                 </Link>

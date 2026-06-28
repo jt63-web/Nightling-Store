@@ -19,10 +19,9 @@ export function LightTile({ light }: LightTileProps) {
   const isNight = mode === 'night';
   const { currency, getRate } = useCurrencyStore();
   const rate = getRate();
-  const price = formatPrice(light.variants[0].price, currency as Currency, rate);
+  const price = formatPrice(light.price, currency as Currency, rate);
   const [hovered, setHovered] = useState(false);
 
-  // In night mode always show the glowing (on) photo; in day mode crossfade off→on on hover
   const showOn = isNight || hovered;
 
   return (
@@ -46,7 +45,6 @@ export function LightTile({ light }: LightTileProps) {
             className="relative aspect-square overflow-hidden"
             style={{ backgroundColor: 'var(--bg-subtle)' }}
           >
-            {/* Off photo */}
             <Image
               src={light.images.off}
               alt={light.name}
@@ -55,7 +53,6 @@ export function LightTile({ light }: LightTileProps) {
               style={{ opacity: showOn ? 0 : 1 }}
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
             />
-            {/* On photo */}
             <Image
               src={light.images.on}
               alt={`${light.name} glowing`}
@@ -80,28 +77,12 @@ export function LightTile({ light }: LightTileProps) {
             >
               {light.tagline}
             </p>
-            <div className="flex items-center justify-between">
-              <span
-                className="font-body font-semibold mode-transition"
-                style={{ color: 'var(--text-primary)' }}
-              >
-                {price}
-              </span>
-              {/* Colour dots */}
-              <div className="flex gap-1">
-                {light.variants.slice(0, 3).map((v) => (
-                  <span
-                    key={v.color}
-                    className="w-4 h-4 rounded-full border"
-                    style={{
-                      backgroundColor: v.colorHex,
-                      borderColor: 'var(--border)',
-                    }}
-                    title={v.color}
-                  />
-                ))}
-              </div>
-            </div>
+            <span
+              className="font-body font-semibold mode-transition"
+              style={{ color: 'var(--text-primary)' }}
+            >
+              {price}
+            </span>
           </div>
         </div>
       </Link>
