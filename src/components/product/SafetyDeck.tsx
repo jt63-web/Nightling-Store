@@ -12,10 +12,10 @@ export function SafetyDeck() {
     Materials: (
       <div className="space-y-4">
         <p className="font-body leading-relaxed mode-transition" style={{ color: 'var(--text-secondary)' }}>
-          Every Nightling light is made entirely from food-grade silicone — the same material used in baby teethers and feeding equipment. It contains no BPA, phthalates, or PVC.
+          Every Nightling light is made using food-grade silicone — the same material widely used in baby teethers and feeding equipment around the world.
         </p>
         <ul className="space-y-2">
-          {['Food-grade silicone body', 'ABS plastic internal housing', 'USB-C charging port', 'Warm LED (non-UV, non-flicker)'].map((item) => (
+          {['Food-grade silicone body', 'ABS plastic internal housing', 'USB-C charging port', 'Warm-white LED'].map((item) => (
             <li key={item} className="flex items-center gap-2 font-body text-sm mode-transition" style={{ color: 'var(--text-secondary)' }}>
               <span style={{ color: 'var(--accent)' }}>✓</span> {item}
             </li>

@@ -11,10 +11,6 @@ export const CURRENCY_SYMBOLS: Record<Currency, string> = {
   JPY: '¥',
 };
 
-// Shipping thresholds in AUD cents; converted to other currencies dynamically
-export const FREE_SHIPPING_AUD = 7000; // A$70
-export const FLAT_SHIPPING_AUD = 695;  // A$6.95
-
 let cachedRates: Record<string, number> | null = null;
 let cacheTime = 0;
 const TTL = 60 * 60 * 1000; // 1 hour
@@ -22,7 +18,7 @@ const TTL = 60 * 60 * 1000; // 1 hour
 export async function getExchangeRates(): Promise<Record<string, number>> {
   if (cachedRates && Date.now() - cacheTime < TTL) return cachedRates;
   try {
-    const res = await fetch('https://open.er-api.com/v6/latest/AUD');
+    const res = await fetch('https://open.er-api.com/v6/latest/USD');
     const data = await res.json();
     if (data?.rates) {
       cachedRates = data.rates as Record<string, number>;
@@ -32,7 +28,7 @@ export async function getExchangeRates(): Promise<Record<string, number>> {
   } catch {
     // fall through to defaults
   }
-  return { AUD: 1, USD: 0.64, EUR: 0.59, GBP: 0.51, CAD: 0.88, JPY: 97 };
+  return { USD: 1, AUD: 1.55, EUR: 0.92, GBP: 0.79, CAD: 1.36, JPY: 157 };
 }
 
 export function formatPrice(cents: number, currency: Currency, rate = 1): string {

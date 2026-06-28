@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const FAQS = [
   {
     q: 'Is it safe for babies and young children?',
-    a: 'Yes. All Nightling lights are made from BPA-free, food-grade silicone and meet international product safety standards. The warm, low-level glow is gentle on little eyes and safe to leave on overnight.',
+    a: 'All Nightling lights are made using food-grade silicone — the same material widely used in baby feeding products and teethers. They are designed for home use and the ultra-low mode is intended for overnight use.',
   },
   {
     q: 'How does the touch control work?',

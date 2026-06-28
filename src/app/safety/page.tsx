@@ -8,11 +8,11 @@ export const metadata: Metadata = {
 const sections = [
   {
     title: 'Materials',
-    content: `All Nightling lights are made from food-grade silicone — the same material used in baby teethers and feeding equipment. Silicone is free from BPA, phthalates, PVC, and other plasticisers. The internal housing is made from ABS plastic and is fully enclosed within the silicone shell.`,
+    content: `All Nightling lights are made using food-grade silicone — the same material widely used in baby teethers and feeding equipment around the world. The internal housing is made from ABS plastic and is fully enclosed within the silicone shell.`,
   },
   {
     title: 'LED safety',
-    content: `Nightling lights use warm-white LEDs designed to be gentle on developing eyes. They emit no UV radiation and no flicker. The warmest brightness setting has the lowest effect on melatonin, making it the most sleep-friendly choice for overnight use.`,
+    content: `Nightling lights use warm-white LEDs chosen for their low-intensity, gentle output. Warmer, dimmer settings are generally considered more sleep-friendly for use at bedtime and overnight, and the ultra-low mode is designed with this in mind.`,
   },
   {
     title: 'Electrical safety',

@@ -36,7 +36,7 @@ export const lights: Light[] = [
     features: [
       'Tap to cycle 3 brightness levels',
       'USB-C rechargeable (cable included)',
-      'BPA-free food-grade silicone',
+      'Food-grade silicone',
       "Soft silicone that won't scratch shelves or floors",
     ],
     images: IMG('nimbus-the-cloud'),
@@ -56,7 +56,7 @@ export const lights: Light[] = [
       'Tap to cycle 3 brightness levels',
       'Double-tap for ultra-low night-light mode',
       'USB-C rechargeable (cable included)',
-      'BPA-free food-grade silicone',
+      'Food-grade silicone',
     ],
     images: {
       off: '/images/lights/blu-the-whale/photo4.png',
@@ -78,7 +78,7 @@ export const lights: Light[] = [
     features: [
       'Tap to cycle 3 brightness levels',
       'USB-C rechargeable (cable included)',
-      'BPA-free food-grade silicone',
+      'Food-grade silicone',
     ],
     images: IMG('coco-the-capybara'),
     pairsWell: ['mocha-the-coffee', 'sunny-the-duck'],
@@ -95,7 +95,7 @@ export const lights: Light[] = [
     features: [
       'Tap to cycle 3 brightness levels',
       'USB-C rechargeable (cable included)',
-      'BPA-free food-grade silicone',
+      'Food-grade silicone',
     ],
     images: IMG('cooper-the-puppy'),
     pairsWell: ['honey-the-bear', 'coco-the-capybara'],
@@ -113,7 +113,7 @@ export const lights: Light[] = [
       'Tap to cycle 3 brightness levels',
       'Double-tap for ultra-low night-light mode',
       'USB-C rechargeable (cable included)',
-      'BPA-free food-grade silicone',
+      'Food-grade silicone',
     ],
     images: IMG('honey-the-bear'),
     pairsWell: ['cooper-the-puppy', 'pepper-the-black-sheep'],
@@ -131,7 +131,7 @@ export const lights: Light[] = [
     features: [
       'Tap to cycle 3 brightness levels',
       'USB-C rechargeable (cable included)',
-      'BPA-free food-grade silicone',
+      'Food-grade silicone',
     ],
     images: {
       off: '/images/lights/luna-the-bunny/photo1.png',
@@ -154,7 +154,7 @@ export const lights: Light[] = [
       'Tap to cycle 3 brightness levels',
       'Double-tap for ultra-low night-light mode',
       'USB-C rechargeable (cable included)',
-      'BPA-free food-grade silicone',
+      'Food-grade silicone',
     ],
     images: IMG('mocha-the-coffee'),
     pairsWell: ['coco-the-capybara', 'luna-the-bunny'],
@@ -172,7 +172,7 @@ export const lights: Light[] = [
     features: [
       'Tap to cycle 3 brightness levels',
       'USB-C rechargeable (cable included)',
-      'BPA-free food-grade silicone',
+      'Food-grade silicone',
     ],
     images: {
       off: '/images/lights/pepper-the-black-sheep/photo1.png',
@@ -196,7 +196,7 @@ export const lights: Light[] = [
       'Tap to cycle 3 brightness levels',
       'Double-tap for ultra-low night-light mode',
       'USB-C rechargeable (cable included)',
-      'BPA-free food-grade silicone',
+      'Food-grade silicone',
     ],
     images: IMG('rex-the-dinosaur'),
     pairsWell: ['sunny-the-duck', 'honey-the-bear'],
@@ -214,7 +214,7 @@ export const lights: Light[] = [
     features: [
       'Tap to cycle 3 brightness levels',
       'USB-C rechargeable (cable included)',
-      'BPA-free food-grade silicone',
+      'Food-grade silicone',
     ],
     images: IMG('sunny-the-duck'),
     pairsWell: ['rex-the-dinosaur', 'coco-the-capybara'],

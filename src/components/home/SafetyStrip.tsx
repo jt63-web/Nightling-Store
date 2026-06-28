@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 const FEATURES = [
-  { icon: '◉', label: 'BPA-free silicone' },
+  { icon: '◉', label: 'Food-grade silicone' },
   { icon: '⏱', label: 'Rechargeable battery' },
   { icon: '⚡', label: 'USB-C rechargeable' },
   { icon: '☀', label: 'Tap to cycle brightness' },

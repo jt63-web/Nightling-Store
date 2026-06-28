@@ -3,7 +3,7 @@ import { CollectionPageContent } from '@/components/collection/CollectionPageCon
 
 export const metadata: Metadata = {
   title: 'The Collection — Nightling',
-  description: 'Browse all Nightling silicone night lights — rechargeable, BPA-free, and gentle on little eyes.',
+  description: 'Browse all Nightling silicone night lights — rechargeable, food-grade silicone, and gentle for everyday home use.',
 };
 
 export default function CollectionPage() {
