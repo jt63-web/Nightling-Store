@@ -3,7 +3,6 @@ export type Light = {
   name: string;
   tagline: string;
   description: string;
-  mood: string;
   price: number; // in cents AUD
   features: string[];
   images: {
@@ -12,7 +11,6 @@ export type Light = {
     angle: string;
     room: string;
   };
-  inBox: string[];
   pairsWell: string[]; // slugs
   reviewCount: number;
   rating: number; // 1–5
@@ -32,17 +30,14 @@ export const lights: Light[] = [
     tagline: 'A gentle giant for little dreamers.',
     description:
       'Blu is a soft beluga whale with one tiny dot eye and a rounded smile that glows from within. Plump, squeeze-able, and perfectly balanced on a shelf. Kids who love the ocean fall hard for Blu.',
-    mood: 'sleepy-clouds',
     price: 4995,
     features: [
       'Tap to cycle 3 brightness levels',
       'Double-tap for ultra-low night-light mode',
-      '12-hour battery at mid brightness',
       'USB-C rechargeable (cable included)',
       'BPA-free food-grade silicone',
     ],
     images: IMG('blu-the-whale'),
-    inBox: ['Blu the Whale light', 'USB-C charging cable', 'Care guide'],
     pairsWell: ['nimbus-the-cloud', 'luna-the-bunny'],
     reviewCount: 142,
     rating: 4.8,
@@ -53,16 +48,13 @@ export const lights: Light[] = [
     tagline: 'The calmest light in the room.',
     description:
       'Coco is a plump, low-slung capybara with a serene expression and a warm amber glow that feels like a campfire from across the room. Coco never panics. Coco just glows.',
-    mood: 'tiny-companions',
     price: 4995,
     features: [
       'Tap to cycle 3 brightness levels',
-      '12-hour battery at mid brightness',
       'USB-C rechargeable (cable included)',
       'BPA-free food-grade silicone',
     ],
     images: IMG('coco-the-capybara'),
-    inBox: ['Coco the Capybara light', 'USB-C charging cable', 'Care guide'],
     pairsWell: ['mocha-the-coffee', 'sunny-the-duck'],
     reviewCount: 87,
     rating: 4.6,
@@ -73,16 +65,13 @@ export const lights: Light[] = [
     tagline: 'Floppy ears, warm light, happy dreams.',
     description:
       'Cooper sits with floppy ears and a wide-eyed look of pure contentment. The soft silicone body catches the glow beautifully — warm all the way through, like sunshine through a frosted window.',
-    mood: 'forest-babies',
     price: 4995,
     features: [
       'Tap to cycle 3 brightness levels',
-      '12-hour battery at mid brightness',
       'USB-C rechargeable (cable included)',
       'BPA-free food-grade silicone',
     ],
     images: IMG('cooper-the-puppy'),
-    inBox: ['Cooper the Puppy light', 'USB-C charging cable', 'Care guide'],
     pairsWell: ['honey-the-bear', 'coco-the-capybara'],
     reviewCount: 203,
     rating: 4.9,
@@ -93,17 +82,14 @@ export const lights: Light[] = [
     tagline: 'Round, warm, and impossibly soft.',
     description:
       'Honey is a squat little bear with small round ears and a face that looks permanently delighted. The warm amber glow is the mellowest in the collection — perfect for keeping on all night.',
-    mood: 'forest-babies',
     price: 4995,
     features: [
       'Tap to cycle 3 brightness levels',
       'Double-tap for ultra-low night-light mode',
-      '12-hour battery at mid brightness',
       'USB-C rechargeable (cable included)',
       'BPA-free food-grade silicone',
     ],
     images: IMG('honey-the-bear'),
-    inBox: ['Honey the Bear light', 'USB-C charging cable', 'Care guide'],
     pairsWell: ['cooper-the-puppy', 'pepper-the-black-sheep'],
     reviewCount: 312,
     rating: 4.9,
@@ -113,17 +99,14 @@ export const lights: Light[] = [
     name: 'Luna the Bunny',
     tagline: 'Long ears and a soft glow for big dreamers.',
     description:
-      'Luna has impossibly long ears that catch the glow from inside and a perfectly round body that fits in two tiny hands. The warmest member of the Sleepy Clouds family.',
-    mood: 'sleepy-clouds',
+      'Luna has impossibly long ears that catch the glow from inside and a perfectly round body that fits in two tiny hands. Warm, round, and completely at home on any shelf.',
     price: 4995,
     features: [
       'Tap to cycle 3 brightness levels',
-      '12-hour battery at mid brightness',
       'USB-C rechargeable (cable included)',
       'BPA-free food-grade silicone',
     ],
     images: IMG('luna-the-bunny'),
-    inBox: ['Luna the Bunny light', 'USB-C charging cable', 'Care guide'],
     pairsWell: ['blu-the-whale', 'nimbus-the-cloud'],
     reviewCount: 201,
     rating: 4.8,
@@ -133,18 +116,15 @@ export const lights: Light[] = [
     name: 'Mocha the Coffee',
     tagline: 'A bedtime brew for tiny hands.',
     description:
-      'Mocha is a chubby coffee mug with a happy face, little legs, and a warm amber glow that feels like a morning cup. Proof that the best bedtime companion doesn\'t have to be an animal.',
-    mood: 'tiny-companions',
+      "Mocha is a chubby coffee mug with a happy face, little legs, and a warm amber glow that feels like a morning cup. Proof that the best bedtime companion doesn't have to be an animal.",
     price: 4995,
     features: [
       'Tap to cycle 3 brightness levels',
       'Double-tap for ultra-low night-light mode',
-      '10-hour battery at mid brightness',
       'USB-C rechargeable (cable included)',
       'BPA-free food-grade silicone',
     ],
     images: IMG('mocha-the-coffee'),
-    inBox: ['Mocha the Coffee light', 'USB-C charging cable', 'Care guide'],
     pairsWell: ['coco-the-capybara', 'luna-the-bunny'],
     reviewCount: 54,
     rating: 4.7,
@@ -154,18 +134,15 @@ export const lights: Light[] = [
     name: 'Nimbus the Cloud',
     tagline: 'The original soft glow companion.',
     description:
-      'Nimbus is a plump, smiling cloud with stumpy little legs — the light that started it all. Squeeze it, cuddle it, leave it glowing on the shelf. Rechargeable in two hours, glowing gently for twelve.',
-    mood: 'sleepy-clouds',
+      'Nimbus is a plump, smiling cloud with stumpy little legs — the light that started it all. Squeeze it, cuddle it, leave it glowing on the shelf. Rechargeable, gentle, and built to last.',
     price: 4995,
     features: [
       'Tap to cycle 3 brightness levels',
-      '12-hour battery at mid brightness',
       'USB-C rechargeable (cable included)',
       'BPA-free food-grade silicone',
-      'Soft silicone that won\'t scratch shelves or floors',
+      "Soft silicone that won't scratch shelves or floors",
     ],
     images: IMG('nimbus-the-cloud'),
-    inBox: ['Nimbus the Cloud light', 'USB-C charging cable', 'Care guide'],
     pairsWell: ['blu-the-whale', 'luna-the-bunny'],
     reviewCount: 258,
     rating: 4.9,
@@ -175,17 +152,14 @@ export const lights: Light[] = [
     name: 'Pepper the Black Sheep',
     tagline: 'Stands out. Glows softly.',
     description:
-      'Pepper is a fluffy little sheep who never quite fit in — and that\'s exactly what makes them special. Soft cream silicone with black accents, a sleepy expression, and a glow that\'s quietly, perfectly warm.',
-    mood: 'forest-babies',
+      "Pepper is a fluffy little sheep who never quite fit in — and that's exactly what makes them special. Soft cream silicone with black accents, a sleepy expression, and a glow that's quietly, perfectly warm.",
     price: 4995,
     features: [
       'Tap to cycle 3 brightness levels',
-      '12-hour battery at mid brightness',
       'USB-C rechargeable (cable included)',
       'BPA-free food-grade silicone',
     ],
     images: IMG('pepper-the-black-sheep'),
-    inBox: ['Pepper the Black Sheep light', 'USB-C charging cable', 'Care guide'],
     pairsWell: ['honey-the-bear', 'cooper-the-puppy'],
     reviewCount: 73,
     rating: 4.5,
@@ -196,17 +170,14 @@ export const lights: Light[] = [
     tagline: 'Tiny roar, enormous glow.',
     description:
       'Rex has a spiky green back, blushing pink cheeks, and a glow that fills a whole room with warmth. For kids who want something a little different at the end of the shelf.',
-    mood: 'cosmic-friends',
     price: 4995,
     features: [
       'Tap to cycle 3 brightness levels',
       'Double-tap for ultra-low night-light mode',
-      '12-hour battery at mid brightness',
       'USB-C rechargeable (cable included)',
       'BPA-free food-grade silicone',
     ],
     images: IMG('rex-the-dinosaur'),
-    inBox: ['Rex the Dinosaur light', 'USB-C charging cable', 'Care guide'],
     pairsWell: ['sunny-the-duck', 'honey-the-bear'],
     reviewCount: 44,
     rating: 4.3,
@@ -217,16 +188,13 @@ export const lights: Light[] = [
     tagline: 'A little glow to brighten bedtime.',
     description:
       'Sunny is a chubby rubber duck reimagined in soft silicone — warm, round, and completely at home on a bath shelf or a bedside table. The cheeriest light in the collection.',
-    mood: 'cosmic-friends',
     price: 4995,
     features: [
       'Tap to cycle 3 brightness levels',
-      '12-hour battery at mid brightness',
       'USB-C rechargeable (cable included)',
       'BPA-free food-grade silicone',
     ],
     images: IMG('sunny-the-duck'),
-    inBox: ['Sunny the Duck light', 'USB-C charging cable', 'Care guide'],
     pairsWell: ['rex-the-dinosaur', 'coco-the-capybara'],
     reviewCount: 152,
     rating: 4.7,
@@ -235,10 +203,6 @@ export const lights: Light[] = [
 
 export function getLightBySlug(slug: string): Light | undefined {
   return lights.find((l) => l.slug === slug);
-}
-
-export function getLightsByMood(mood: string): Light[] {
-  return lights.filter((l) => l.mood === mood);
 }
 
 export function getRelatedLights(slug: string): Light[] {

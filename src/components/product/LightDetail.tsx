@@ -273,7 +273,7 @@ export function LightDetail({ light, related }: LightDetailProps) {
           Safety & materials
         </h2>
         <div className="max-w-2xl">
-          <SafetyDeck light={light} />
+          <SafetyDeck />
         </div>
       </section>
 

@@ -1,16 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import type { Light } from '@/lib/products';
 
 const TABS = ['Materials', 'Care', "What's in the box"] as const;
 type Tab = (typeof TABS)[number];
 
-interface SafetyDeckProps {
-  light: Light;
-}
-
-export function SafetyDeck({ light }: SafetyDeckProps) {
+export function SafetyDeck() {
   const [active, setActive] = useState<Tab>('Materials');
 
   const content: Record<Tab, React.ReactNode> = {
@@ -50,7 +45,7 @@ export function SafetyDeck({ light }: SafetyDeckProps) {
     ),
     "What's in the box": (
       <ul className="space-y-2">
-        {light.inBox.map((item) => (
+        {['The light', 'USB-C charging cable', 'Care & safety guide'].map((item) => (
           <li key={item} className="flex items-center gap-2 font-body text-sm mode-transition" style={{ color: 'var(--text-secondary)' }}>
             <span style={{ color: 'var(--accent)' }}>—</span> {item}
           </li>

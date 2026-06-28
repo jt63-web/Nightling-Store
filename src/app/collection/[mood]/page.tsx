@@ -1,8 +1,13 @@
 import { redirect } from 'next/navigation';
-import { moods } from '@/lib/moods';
 
+// These pages no longer exist — any old mood URLs redirect to the full collection
 export function generateStaticParams() {
-  return moods.map((m) => ({ mood: m.slug }));
+  return [
+    { mood: 'sleepy-clouds' },
+    { mood: 'cosmic-friends' },
+    { mood: 'forest-babies' },
+    { mood: 'tiny-companions' },
+  ];
 }
 
 export default function MoodPage() {

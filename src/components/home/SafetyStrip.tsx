@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const FEATURES = [
   { icon: '◉', label: 'BPA-free silicone' },
-  { icon: '⏱', label: '12-hr battery' },
+  { icon: '⏱', label: 'Rechargeable battery' },
   { icon: '⚡', label: 'USB-C rechargeable' },
   { icon: '☀', label: 'Tap to cycle brightness' },
 ];

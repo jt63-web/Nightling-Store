@@ -1,6 +1,5 @@
 import type { MetadataRoute } from 'next';
 import { lights } from '@/lib/products';
-import { moods } from '@/lib/moods';
 import { journalPosts } from '@/lib/journal';
 
 const BASE = 'https://nightling.com';
@@ -24,13 +23,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }));
 
-  const moodRoutes: MetadataRoute.Sitemap = moods.map((m) => ({
-    url: `${BASE}/collection/${m.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly',
-    priority: 0.75,
-  }));
-
   const journalRoutes: MetadataRoute.Sitemap = journalPosts.map((p) => ({
     url: `${BASE}/journal/${p.slug}`,
     lastModified: new Date(p.date),
@@ -38,5 +30,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.65,
   }));
 
-  return [...staticRoutes, ...lightRoutes, ...moodRoutes, ...journalRoutes];
+  return [...staticRoutes, ...lightRoutes, ...journalRoutes];
 }
