@@ -12,6 +12,7 @@ import type { Currency } from '@/lib/currency-helpers';
 import type { Light } from '@/lib/products';
 import { GlowDemo } from './GlowDemo';
 import { SafetyDeck } from './SafetyDeck';
+import { ProductReviews } from './ProductReviews';
 
 interface LightDetailProps {
   light: Light;
@@ -218,6 +219,9 @@ export function LightDetail({ light, related }: LightDetailProps) {
           </div>
         </div>
       </div>
+
+      {/* Reviews */}
+      <ProductReviews light={light} />
 
       {/* Glow demo */}
       <section className="max-w-7xl mx-auto px-6 py-16">

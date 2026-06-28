@@ -48,8 +48,8 @@ export const lights: Light[] = [
     images: IMG('blu-the-whale'),
     inBox: ['Blu the Whale light', 'USB-C charging cable', 'Care guide'],
     pairsWell: ['nimbus-the-cloud', 'luna-the-bunny'],
-    reviewCount: 218,
-    rating: 4.9,
+    reviewCount: 142,
+    rating: 4.8,
   },
   {
     slug: 'coco-the-capybara',
@@ -70,8 +70,8 @@ export const lights: Light[] = [
     images: IMG('coco-the-capybara'),
     inBox: ['Coco the Capybara light', 'USB-C charging cable', 'Care guide'],
     pairsWell: ['mocha-the-coffee', 'sunny-the-duck'],
-    reviewCount: 134,
-    rating: 4.8,
+    reviewCount: 87,
+    rating: 4.6,
   },
   {
     slug: 'cooper-the-puppy',
@@ -92,7 +92,7 @@ export const lights: Light[] = [
     images: IMG('cooper-the-puppy'),
     inBox: ['Cooper the Puppy light', 'USB-C charging cable', 'Care guide'],
     pairsWell: ['honey-the-bear', 'coco-the-capybara'],
-    reviewCount: 187,
+    reviewCount: 203,
     rating: 4.9,
   },
   {
@@ -115,7 +115,7 @@ export const lights: Light[] = [
     images: IMG('honey-the-bear'),
     inBox: ['Honey the Bear light', 'USB-C charging cable', 'Care guide'],
     pairsWell: ['cooper-the-puppy', 'pepper-the-black-sheep'],
-    reviewCount: 302,
+    reviewCount: 312,
     rating: 4.9,
   },
   {
@@ -137,8 +137,8 @@ export const lights: Light[] = [
     images: IMG('luna-the-bunny'),
     inBox: ['Luna the Bunny light', 'USB-C charging cable', 'Care guide'],
     pairsWell: ['blu-the-whale', 'nimbus-the-cloud'],
-    reviewCount: 241,
-    rating: 4.9,
+    reviewCount: 201,
+    rating: 4.8,
   },
   {
     slug: 'mocha-the-coffee',
@@ -160,8 +160,8 @@ export const lights: Light[] = [
     images: IMG('mocha-the-coffee'),
     inBox: ['Mocha the Coffee light', 'USB-C charging cable', 'Care guide'],
     pairsWell: ['coco-the-capybara', 'luna-the-bunny'],
-    reviewCount: 98,
-    rating: 4.8,
+    reviewCount: 54,
+    rating: 4.7,
   },
   {
     slug: 'nimbus-the-cloud',
@@ -183,7 +183,7 @@ export const lights: Light[] = [
     images: IMG('nimbus-the-cloud'),
     inBox: ['Nimbus the Cloud light', 'USB-C charging cable', 'Care guide'],
     pairsWell: ['blu-the-whale', 'luna-the-bunny'],
-    reviewCount: 284,
+    reviewCount: 258,
     rating: 4.9,
   },
   {
@@ -205,8 +205,8 @@ export const lights: Light[] = [
     images: IMG('pepper-the-black-sheep'),
     inBox: ['Pepper the Black Sheep light', 'USB-C charging cable', 'Care guide'],
     pairsWell: ['honey-the-bear', 'cooper-the-puppy'],
-    reviewCount: 156,
-    rating: 4.8,
+    reviewCount: 73,
+    rating: 4.5,
   },
   {
     slug: 'rex-the-dinosaur',
@@ -228,8 +228,8 @@ export const lights: Light[] = [
     images: IMG('rex-the-dinosaur'),
     inBox: ['Rex the Dinosaur light', 'USB-C charging cable', 'Care guide'],
     pairsWell: ['sunny-the-duck', 'honey-the-bear'],
-    reviewCount: 173,
-    rating: 4.8,
+    reviewCount: 44,
+    rating: 4.3,
   },
   {
     slug: 'sunny-the-duck',
@@ -250,8 +250,8 @@ export const lights: Light[] = [
     images: IMG('sunny-the-duck'),
     inBox: ['Sunny the Duck light', 'USB-C charging cable', 'Care guide'],
     pairsWell: ['rex-the-dinosaur', 'coco-the-capybara'],
-    reviewCount: 211,
-    rating: 4.9,
+    reviewCount: 152,
+    rating: 4.7,
   },
 ];
 
