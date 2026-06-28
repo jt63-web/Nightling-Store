@@ -14,6 +14,7 @@ export type Light = {
   pairsWell: string[]; // slugs
   reviewCount: number;
   rating: number; // 1–5
+  tag?: 'new' | 'bestseller';
 };
 
 const IMG = (slug: string) => ({
@@ -24,6 +25,25 @@ const IMG = (slug: string) => ({
 });
 
 export const lights: Light[] = [
+  {
+    slug: 'nimbus-the-cloud',
+    name: 'Nimbus the Cloud',
+    tagline: 'The original soft glow companion.',
+    description:
+      'Nimbus is a plump, smiling cloud with stumpy little legs — the light that started it all. Squeeze it, cuddle it, leave it glowing on the shelf. Rechargeable, gentle, and built to last.',
+    price: 4995,
+    features: [
+      'Tap to cycle 3 brightness levels',
+      'USB-C rechargeable (cable included)',
+      'BPA-free food-grade silicone',
+      "Soft silicone that won't scratch shelves or floors",
+    ],
+    images: IMG('nimbus-the-cloud'),
+    pairsWell: ['blu-the-whale', 'luna-the-bunny'],
+    reviewCount: 258,
+    rating: 4.9,
+    tag: 'bestseller',
+  },
   {
     slug: 'blu-the-whale',
     name: 'Blu the Whale',
@@ -37,7 +57,12 @@ export const lights: Light[] = [
       'USB-C rechargeable (cable included)',
       'BPA-free food-grade silicone',
     ],
-    images: IMG('blu-the-whale'),
+    images: {
+      off: '/images/lights/blu-the-whale/photo4.png',
+      on: '/images/lights/blu-the-whale/photo1.png',
+      angle: '/images/lights/blu-the-whale/photo3.png',
+      room: '/images/lights/blu-the-whale/photo2.png',
+    },
     pairsWell: ['nimbus-the-cloud', 'luna-the-bunny'],
     reviewCount: 142,
     rating: 4.8,
@@ -93,6 +118,7 @@ export const lights: Light[] = [
     pairsWell: ['cooper-the-puppy', 'pepper-the-black-sheep'],
     reviewCount: 312,
     rating: 4.9,
+    tag: 'bestseller',
   },
   {
     slug: 'luna-the-bunny',
@@ -106,7 +132,12 @@ export const lights: Light[] = [
       'USB-C rechargeable (cable included)',
       'BPA-free food-grade silicone',
     ],
-    images: IMG('luna-the-bunny'),
+    images: {
+      off: '/images/lights/luna-the-bunny/photo1.png',
+      on: '/images/lights/luna-the-bunny/photo3.png',
+      angle: '/images/lights/luna-the-bunny/photo4.png',
+      room: '/images/lights/luna-the-bunny/photo4.png',
+    },
     pairsWell: ['blu-the-whale', 'nimbus-the-cloud'],
     reviewCount: 201,
     rating: 4.8,
@@ -130,24 +161,6 @@ export const lights: Light[] = [
     rating: 4.7,
   },
   {
-    slug: 'nimbus-the-cloud',
-    name: 'Nimbus the Cloud',
-    tagline: 'The original soft glow companion.',
-    description:
-      'Nimbus is a plump, smiling cloud with stumpy little legs — the light that started it all. Squeeze it, cuddle it, leave it glowing on the shelf. Rechargeable, gentle, and built to last.',
-    price: 4995,
-    features: [
-      'Tap to cycle 3 brightness levels',
-      'USB-C rechargeable (cable included)',
-      'BPA-free food-grade silicone',
-      "Soft silicone that won't scratch shelves or floors",
-    ],
-    images: IMG('nimbus-the-cloud'),
-    pairsWell: ['blu-the-whale', 'luna-the-bunny'],
-    reviewCount: 258,
-    rating: 4.9,
-  },
-  {
     slug: 'pepper-the-black-sheep',
     name: 'Pepper the Black Sheep',
     tagline: 'Stands out. Glows softly.',
@@ -159,7 +172,12 @@ export const lights: Light[] = [
       'USB-C rechargeable (cable included)',
       'BPA-free food-grade silicone',
     ],
-    images: IMG('pepper-the-black-sheep'),
+    images: {
+      off: '/images/lights/pepper-the-black-sheep/photo1.png',
+      on: '/images/lights/pepper-the-black-sheep/photo4.png',
+      angle: '/images/lights/pepper-the-black-sheep/photo3.png',
+      room: '/images/lights/pepper-the-black-sheep/photo2.png',
+    },
     pairsWell: ['honey-the-bear', 'cooper-the-puppy'],
     reviewCount: 73,
     rating: 4.5,
@@ -181,6 +199,7 @@ export const lights: Light[] = [
     pairsWell: ['sunny-the-duck', 'honey-the-bear'],
     reviewCount: 44,
     rating: 4.3,
+    tag: 'new',
   },
   {
     slug: 'sunny-the-duck',

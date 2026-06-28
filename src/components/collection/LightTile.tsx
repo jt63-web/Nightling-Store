@@ -45,6 +45,18 @@ export function LightTile({ light }: LightTileProps) {
             className="relative aspect-square overflow-hidden"
             style={{ backgroundColor: 'var(--bg-subtle)' }}
           >
+            {light.tag && (
+              <div
+                className="absolute top-2.5 left-2.5 z-10 font-body text-xs font-bold px-2.5 py-1 rounded-full tracking-wide"
+                style={
+                  light.tag === 'new'
+                    ? { backgroundColor: 'var(--accent)', color: 'var(--bg-page)' }
+                    : { backgroundColor: 'rgba(0,0,0,0.72)', color: '#FFE9B8' }
+                }
+              >
+                {light.tag === 'new' ? 'NEW' : '★ BESTSELLER'}
+              </div>
+            )}
             <Image
               src={light.images.off}
               alt={light.name}

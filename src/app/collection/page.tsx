@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
-import { lights } from '@/lib/products';
-import { CollectionGrid } from '@/components/collection/CollectionGrid';
+import { CollectionPageContent } from '@/components/collection/CollectionPageContent';
 
 export const metadata: Metadata = {
   title: 'The Collection — Nightling',
@@ -31,7 +30,7 @@ export default function CollectionPage() {
         </p>
       </div>
 
-      <CollectionGrid lights={lights} />
+      <CollectionPageContent />
     </main>
   );
 }

@@ -47,7 +47,7 @@ export function LightDetail({ light, related }: LightDetailProps) {
     { src: light.images.on, label: 'On' },
     { src: light.images.angle, label: 'Detail' },
     { src: light.images.room, label: 'Lifestyle' },
-  ];
+  ].filter((p, i, arr) => arr.findIndex((q) => q.src === p.src) === i);
 
   const [activeImage, setActiveImage] = useState(isNight ? 1 : 0);
   const [added, setAdded] = useState(false);
@@ -193,6 +193,18 @@ export function LightDetail({ light, related }: LightDetailProps) {
         {/* Product info */}
         <div className="flex flex-col gap-6">
           <div>
+            {light.tag && (
+              <div
+                className="inline-block font-body text-xs font-bold px-3 py-1.5 rounded-full tracking-wide mb-4"
+                style={
+                  light.tag === 'new'
+                    ? { backgroundColor: 'var(--accent)', color: 'var(--bg-page)' }
+                    : { backgroundColor: 'rgba(0,0,0,0.08)', color: 'var(--text-primary)', border: '1px solid var(--border)' }
+                }
+              >
+                {light.tag === 'new' ? 'NEW' : '★ BESTSELLER'}
+              </div>
+            )}
             <h1 className="font-display text-4xl lg:text-5xl mb-3 mode-transition" style={{ color: 'var(--text-primary)' }}>
               {light.name}
             </h1>
