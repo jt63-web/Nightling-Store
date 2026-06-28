@@ -4,7 +4,7 @@ import { persist } from 'zustand/middleware';
 export type CartItem = {
   slug: string;
   name: string;
-  price: number; // AUD cents
+  price: number; // USD cents
   qty: number;
   image: string;
 };

@@ -3,7 +3,7 @@ export type Light = {
   name: string;
   tagline: string;
   description: string;
-  price: number; // in cents AUD
+  price: number; // in cents USD
   features: string[];
   images: {
     off: string;

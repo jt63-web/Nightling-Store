@@ -37,7 +37,7 @@ export default function OurStoryPage() {
           We spent months testing silicone formulas, LED temperatures, and diffuser geometries. The result was Cloud Dreamer — a plump, smiling cloud with the warmest 2700K glow we could coax out of a single LED and food-grade silicone.
         </p>
         <p>
-          Nightling lights are designed in Melbourne, Australia, and made in a certified factory that also produces baby feeding equipment. Every material is tested against the same standards we&apos;d apply to a teething ring — because some children do, inevitably, put them in their mouths.
+          Nightling lights are made in a certified factory that also produces baby feeding equipment. Every material is tested against the same standards we&apos;d apply to a teething ring — because some children do, inevitably, put them in their mouths.
         </p>
         <p>
           Our team is tiny: two founders, a product designer, and a small warehouse team. We&apos;re building this slowly and carefully, one character at a time.
