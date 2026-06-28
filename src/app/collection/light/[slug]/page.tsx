@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     openGraph: {
       title: light.name,
       description: light.tagline,
-      images: [{ url: light.images.day }],
+      images: [{ url: light.images.off }],
     },
   };
 }

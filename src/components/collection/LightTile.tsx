@@ -1,6 +1,8 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useModeStore } from '@/lib/stores/mode';
 import { useCurrencyStore } from '@/lib/stores/currency';
@@ -18,6 +20,10 @@ export function LightTile({ light }: LightTileProps) {
   const { currency, getRate } = useCurrencyStore();
   const rate = getRate();
   const price = formatPrice(light.variants[0].price, currency as Currency, rate);
+  const [hovered, setHovered] = useState(false);
+
+  // In night mode always show the glowing (on) photo; in day mode crossfade off→on on hover
+  const showOn = isNight || hovered;
 
   return (
     <motion.div
@@ -32,61 +38,32 @@ export function LightTile({ light }: LightTileProps) {
             borderColor: 'var(--border)',
             boxShadow: 'var(--shadow-card)',
           }}
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
         >
-          {/* Image area with day/night crossfade */}
+          {/* Image area with hover crossfade */}
           <div
-            className="relative aspect-square flex items-center justify-center overflow-hidden"
+            className="relative aspect-square overflow-hidden"
             style={{ backgroundColor: 'var(--bg-subtle)' }}
           >
-            {/* Day image */}
-            <motion.div
-              className="absolute inset-0 flex items-center justify-center"
-              animate={{ opacity: isNight ? 0 : 1 }}
-              transition={{ duration: 0.6 }}
-            >
-              {/* Placeholder SVG representing the light off */}
-              <svg viewBox="0 0 120 140" className="w-2/3 h-2/3" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="60" cy="60" rx="48" ry="44" fill="#FFFBF0" />
-                <circle cx="24" cy="40" r="22" fill="#FFFBF0" />
-                <circle cx="58" cy="28" r="26" fill="#FFFBF0" />
-                <circle cx="96" cy="42" r="20" fill="#FFFBF0" />
-                <circle cx="44" cy="58" r="4" fill="#1C0E06" />
-                <circle cx="72" cy="56" r="4" fill="#1C0E06" />
-                <path d="M46,70 Q60,82 74,70" stroke="#1C0E06" strokeWidth="3" fill="none" strokeLinecap="round" />
-                <rect x="28" y="96" width="13" height="30" rx="6.5" fill="#1C0E06" />
-                <rect x="79" y="96" width="13" height="30" rx="6.5" fill="#1C0E06" />
-                <ellipse cx="34.5" cy="128" rx="15" ry="9" fill="#1C0E06" />
-                <ellipse cx="85.5" cy="128" rx="15" ry="9" fill="#1C0E06" />
-              </svg>
-            </motion.div>
-
-            {/* Night image — glowing version */}
-            <motion.div
-              className="absolute inset-0 flex items-center justify-center"
-              animate={{ opacity: isNight ? 1 : 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <div
-                style={{
-                  filter: 'drop-shadow(0 0 20px rgba(255,185,87,0.8)) drop-shadow(0 0 40px rgba(255,185,87,0.4))',
-                }}
-              >
-                <svg viewBox="0 0 120 140" className="w-2/3 h-2/3" xmlns="http://www.w3.org/2000/svg">
-                  <ellipse cx="60" cy="60" rx="48" ry="44" fill="#FFE9B8" />
-                  <circle cx="24" cy="40" r="22" fill="#FFE9B8" />
-                  <circle cx="58" cy="28" r="26" fill="#FFE9B8" />
-                  <circle cx="96" cy="42" r="20" fill="#FFE9B8" />
-                  <ellipse cx="60" cy="58" rx="30" ry="26" fill="rgba(255,220,120,0.3)" />
-                  <circle cx="44" cy="58" r="4" fill="#1C0E06" />
-                  <circle cx="72" cy="56" r="4" fill="#1C0E06" />
-                  <path d="M46,70 Q60,82 74,70" stroke="#1C0E06" strokeWidth="3" fill="none" strokeLinecap="round" />
-                  <rect x="28" y="96" width="13" height="30" rx="6.5" fill="#1C0E06" />
-                  <rect x="79" y="96" width="13" height="30" rx="6.5" fill="#1C0E06" />
-                  <ellipse cx="34.5" cy="128" rx="15" ry="9" fill="#1C0E06" />
-                  <ellipse cx="85.5" cy="128" rx="15" ry="9" fill="#1C0E06" />
-                </svg>
-              </div>
-            </motion.div>
+            {/* Off photo */}
+            <Image
+              src={light.images.off}
+              alt={light.name}
+              fill
+              className="object-contain p-4 transition-opacity duration-500"
+              style={{ opacity: showOn ? 0 : 1 }}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            />
+            {/* On photo */}
+            <Image
+              src={light.images.on}
+              alt={`${light.name} glowing`}
+              fill
+              className="object-contain p-4 transition-opacity duration-500"
+              style={{ opacity: showOn ? 1 : 0 }}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            />
           </div>
 
           {/* Info */}

@@ -2,10 +2,10 @@
 
 import { useState, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { lights } from '@/lib/products';
 import { moods } from '@/lib/moods';
-import { CloudLogo } from '@/components/shared/CloudLogo';
 
 const OTHER_LINKS = [
   { href: '/our-story', label: 'Our Story', desc: 'How Nightling began' },
@@ -64,7 +64,7 @@ export function MegaMenu() {
             exit={{ opacity: 0, y: 8 }}
             transition={{ duration: 0.18 }}
             className="absolute left-1/2 -translate-x-1/2 top-full mt-3 z-50 mode-transition"
-            style={{ width: 600 }}
+            style={{ width: 620 }}
           >
             {/* Arrow */}
             <div className="flex justify-center mb-1">
@@ -110,8 +110,17 @@ export function MegaMenu() {
                             className="flex items-center gap-2.5 p-2 rounded-xl hover:opacity-80 transition-opacity group"
                             style={{ backgroundColor: 'var(--bg-subtle)' }}
                           >
-                            <div className="flex-shrink-0">
-                              <CloudLogo size={28} />
+                            <div
+                              className="flex-shrink-0 w-8 h-8 rounded-lg overflow-hidden relative"
+                              style={{ backgroundColor: 'var(--bg-page)' }}
+                            >
+                              <Image
+                                src={light.images.off}
+                                alt={light.name}
+                                fill
+                                className="object-contain p-0.5"
+                                sizes="32px"
+                              />
                             </div>
                             <div className="min-w-0">
                               <p

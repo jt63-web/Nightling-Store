@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { useModeStore } from '@/lib/stores/mode';
@@ -11,7 +12,6 @@ import type { Currency } from '@/lib/currency-helpers';
 import type { Light } from '@/lib/products';
 import { GlowDemo } from './GlowDemo';
 import { SafetyDeck } from './SafetyDeck';
-import { CloudLogo } from '@/components/shared/CloudLogo';
 
 interface LightDetailProps {
   light: Light;
@@ -43,11 +43,20 @@ export function LightDetail({ light, related }: LightDetailProps) {
   const variant = light.variants[selectedVariantIdx];
   const price = formatPrice(variant.price, currency as Currency, rate);
 
-  const [activeImage, setActiveImage] = useState(0);
+  const photos = [
+    { src: light.images.off, label: 'Off' },
+    { src: light.images.on, label: 'On' },
+    { src: light.images.angle, label: 'Detail' },
+    { src: light.images.room, label: 'Lifestyle' },
+  ];
+
+  // In night mode, default to the "on" photo (index 1)
+  const [activeImage, setActiveImage] = useState(isNight ? 1 : 0);
+
   const [added, setAdded] = useState(false);
 
   function handleAddToCart() {
-    addItem({ slug: light.slug, name: light.name, color: variant.color, colorHex: variant.colorHex, price: variant.price, image: light.images.day });
+    addItem({ slug: light.slug, name: light.name, color: variant.color, colorHex: variant.colorHex, price: variant.price, image: light.images.off });
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);
   }
@@ -55,9 +64,7 @@ export function LightDetail({ light, related }: LightDetailProps) {
   return (
     <main>
       {/* Breadcrumb */}
-      <div
-        className="max-w-7xl mx-auto px-6 pt-8 pb-0"
-      >
+      <div className="max-w-7xl mx-auto px-6 pt-8 pb-0">
         <nav className="flex gap-2 font-body text-xs mode-transition" style={{ color: 'var(--text-secondary)' }}>
           <Link href="/" className="hover:opacity-80">Home</Link>
           <span>/</span>
@@ -73,28 +80,36 @@ export function LightDetail({ light, related }: LightDetailProps) {
         <div className="space-y-4">
           {/* Main image */}
           <div
-            className="rounded-3xl overflow-hidden aspect-square flex items-center justify-center relative mode-transition"
-            style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)', border: '1px solid var(--border)' }}
+            className="rounded-3xl overflow-hidden aspect-square relative mode-transition"
+            style={{ backgroundColor: 'var(--bg-card)', border: '1px solid var(--border)' }}
           >
-            {/* Day placeholder */}
-            <motion.div
-              className="absolute inset-0 flex items-center justify-center"
-              animate={{ opacity: isNight ? 0 : 1 }}
-              transition={{ duration: 0.8 }}
-            >
-              <CloudLogo size={220} float />
-            </motion.div>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeImage}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="absolute inset-0"
+              >
+                <Image
+                  src={photos[activeImage].src}
+                  alt={`${light.name} — ${photos[activeImage].label}`}
+                  fill
+                  className="object-contain p-8"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
+              </motion.div>
+            </AnimatePresence>
 
-            {/* Night placeholder — glowing */}
-            <motion.div
-              className="absolute inset-0 flex items-center justify-center"
-              animate={{ opacity: isNight ? 1 : 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div style={{ filter: 'drop-shadow(0 0 32px rgba(255,185,87,0.85)) drop-shadow(0 0 60px rgba(255,185,87,0.4))' }}>
-                <CloudLogo size={220} float />
-              </div>
-            </motion.div>
+            {/* Glow effect in night mode when showing "on" photo */}
+            {isNight && activeImage === 1 && (
+              <div
+                className="absolute inset-0 pointer-events-none rounded-3xl"
+                style={{ boxShadow: 'inset 0 0 60px rgba(255,185,87,0.08)' }}
+              />
+            )}
 
             {/* Mode hint badge */}
             <div
@@ -107,17 +122,24 @@ export function LightDetail({ light, related }: LightDetailProps) {
 
           {/* Thumbnails */}
           <div className="flex gap-3">
-            {[0, 1, 2, 3].map((i) => (
+            {photos.map((photo, i) => (
               <button
                 key={i}
                 onClick={() => setActiveImage(i)}
-                className="flex-1 aspect-square rounded-2xl overflow-hidden flex items-center justify-center mode-transition"
+                aria-label={photo.label}
+                className="flex-1 aspect-square rounded-2xl overflow-hidden relative mode-transition"
                 style={{
                   backgroundColor: 'var(--bg-card)',
                   border: `2px solid ${activeImage === i ? 'var(--accent)' : 'var(--border)'}`,
                 }}
               >
-                <CloudLogo size={36} />
+                <Image
+                  src={photo.src}
+                  alt={photo.label}
+                  fill
+                  className="object-contain p-2"
+                  sizes="80px"
+                />
               </button>
             ))}
           </div>
@@ -275,10 +297,16 @@ export function LightDetail({ light, related }: LightDetailProps) {
                     style={{ backgroundColor: 'var(--bg-page)', border: '1px solid var(--border)' }}
                   >
                     <div
-                      className="aspect-square rounded-xl flex items-center justify-center mb-3 mode-transition"
+                      className="aspect-square rounded-xl relative mb-3 overflow-hidden mode-transition"
                       style={{ backgroundColor: 'var(--bg-subtle)' }}
                     >
-                      <CloudLogo size={56} />
+                      <Image
+                        src={r.images.off}
+                        alt={r.name}
+                        fill
+                        className="object-contain p-3"
+                        sizes="160px"
+                      />
                     </div>
                     <p className="font-display text-base mode-transition" style={{ color: 'var(--text-primary)' }}>{r.name}</p>
                     <p className="font-body text-xs mt-0.5 mode-transition" style={{ color: 'var(--text-secondary)' }}>
