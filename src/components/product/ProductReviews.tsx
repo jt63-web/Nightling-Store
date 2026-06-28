@@ -128,20 +128,12 @@ export function ProductReviews({ light }: ProductReviewsProps) {
               className="flex items-center justify-between pt-3 border-t mode-transition"
               style={{ borderColor: 'var(--border)' }}
             >
-              <div>
-                <p
-                  className="font-body text-xs font-semibold mode-transition"
-                  style={{ color: 'var(--text-primary)' }}
-                >
-                  {review.reviewer}
-                </p>
-                <p
-                  className="font-body text-xs mode-transition"
-                  style={{ color: 'var(--text-secondary)', opacity: 0.6 }}
-                >
-                  {review.location}
-                </p>
-              </div>
+              <p
+                className="font-body text-xs font-semibold mode-transition"
+                style={{ color: 'var(--text-primary)' }}
+              >
+                {review.reviewer}
+              </p>
               <span
                 className="font-body text-xs px-2.5 py-1 rounded-full mode-transition"
                 style={{

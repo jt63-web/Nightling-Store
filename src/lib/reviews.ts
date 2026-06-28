@@ -1,7 +1,6 @@
 export type Review = {
   id: string;
   reviewer: string;
-  location: string;
   date: string;
   rating: 4 | 5;
   text: string;
@@ -12,7 +11,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'blu-1',
       reviewer: 'Sarah M.',
-      location: 'Sydney',
       date: 'April 2025',
       rating: 5,
       text: 'My 3-year-old has named him "Bloop" and refuses to sleep without him. The glow is so gentle we\'ve stopped using any other light in the nursery.',
@@ -20,7 +18,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'blu-2',
       reviewer: 'James K.',
-      location: 'Melbourne',
       date: 'March 2025',
       rating: 5,
       text: 'Beautifully made. The silicone is much squishier than expected — my daughter carries Blu around like a stuffed animal all day, then puts him on the bedside table at night.',
@@ -28,7 +25,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'blu-3',
       reviewer: 'Priya L.',
-      location: 'Brisbane',
       date: 'February 2025',
       rating: 5,
       text: 'Bought as a birthday gift and the mum messaged me a photo at 2am of her kid snuggled up next to it. Best present I\'ve ever given. Already ordered one for my own daughter.',
@@ -36,7 +32,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'blu-4',
       reviewer: 'Tom W.',
-      location: 'Auckland',
       date: 'January 2025',
       rating: 4,
       text: 'We have four Nightling lights now and Blu was the second. Something about the whale shape just works in a kid\'s room. The battery really does last all night.',
@@ -47,7 +42,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'coco-1',
       reviewer: 'Anna T.',
-      location: 'Perth',
       date: 'May 2025',
       rating: 5,
       text: 'Honestly I bought this more for myself than my kid. Coco sits on the dresser and makes the whole room feel calm. Exactly the vibe we needed for bedtime.',
@@ -55,7 +49,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'coco-2',
       reviewer: 'Rachel S.',
-      location: 'Adelaide',
       date: 'March 2025',
       rating: 5,
       text: 'My son is obsessed with capybaras so this was a no-brainer. He uses the mid brightness setting every single night and charges it himself now — he\'s four.',
@@ -63,7 +56,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'coco-3',
       reviewer: 'Marcus D.',
-      location: 'Melbourne',
       date: 'February 2025',
       rating: 5,
       text: 'The low brightness is almost magically subtle — just enough light to check on him without waking him. We haven\'t had a "scared of the dark" moment since Coco arrived.',
@@ -71,7 +63,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'coco-4',
       reviewer: 'Jess F.',
-      location: 'Sydney',
       date: 'January 2025',
       rating: 4,
       text: 'I was skeptical about a capybara night light but Coco is genuinely the most calm-looking thing I\'ve ever seen. It just radiates "everything is fine." My daughter loves it.',
@@ -82,7 +73,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'cooper-1',
       reviewer: 'Emma R.',
-      location: 'Sydney',
       date: 'May 2025',
       rating: 5,
       text: 'Arrived beautifully packaged. My daughter immediately called it "Biscuit" and tucked it in next to her. She\'s never slept with a stuffed animal before — now she sleeps with Cooper every night.',
@@ -90,7 +80,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'cooper-2',
       reviewer: 'David H.',
-      location: 'Canberra',
       date: 'April 2025',
       rating: 5,
       text: 'The three brightness levels are perfect. Low overnight, medium when she wakes up scared, high for the occasional check-in. We haven\'t needed the ceiling light at bedtime in months.',
@@ -98,7 +87,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'cooper-3',
       reviewer: 'Claire B.',
-      location: 'Melbourne',
       date: 'March 2025',
       rating: 5,
       text: 'Silicone quality is exceptional. Expected it to feel plasticky but it\'s genuinely soft and warm to hold, even when it\'s off. You can tell real thought went into the material.',
@@ -106,7 +94,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'cooper-4',
       reviewer: 'Nick O.',
-      location: 'Brisbane',
       date: 'February 2025',
       rating: 5,
       text: 'Cooper sits on my son\'s bedside table and is honestly a design object as much as a night light. People ask about it when they visit. Would buy again without hesitation.',
@@ -117,7 +104,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'honey-1',
       reviewer: 'Sophie M.',
-      location: 'Melbourne',
       date: 'April 2025',
       rating: 5,
       text: 'Best purchase we\'ve made for the nursery. The double-tap for ultra-low mode has been a lifesaver for night feeds — enough light to see without waking my newborn. Worth every cent.',
@@ -125,7 +111,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'honey-2',
       reviewer: 'Ben A.',
-      location: 'Sydney',
       date: 'March 2025',
       rating: 5,
       text: 'My 18-month-old points at Honey and says "bear!" every single morning. It\'s become part of the routine — we turn it off together, she waves goodbye. I didn\'t expect to be this charmed.',
@@ -133,7 +118,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'honey-3',
       reviewer: 'Laura K.',
-      location: 'Gold Coast',
       date: 'February 2025',
       rating: 5,
       text: 'We\'ve recommended this to every parent we know. The warmth of the glow is unlike any other night light we\'ve tried. Honey makes the whole room feel like a hug.',
@@ -141,7 +125,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'honey-4',
       reviewer: 'Caitlin P.',
-      location: 'Auckland',
       date: 'January 2025',
       rating: 5,
       text: 'Arrived in the most beautiful packaging — felt wrong to open it. The light itself is even better in person. The silicone is so soft and the bear shape is perfectly proportioned.',
@@ -152,7 +135,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'luna-1',
       reviewer: 'Jessica W.',
-      location: 'Sydney',
       date: 'May 2025',
       rating: 5,
       text: 'Luna\'s ears glow beautifully from the inside. It\'s the most aesthetically pleasing night light I\'ve ever seen in a child\'s room. My daughter has a bedtime ritual now — it ends with switching Luna on.',
@@ -160,7 +142,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'luna-2',
       reviewer: 'Michael T.',
-      location: 'Melbourne',
       date: 'April 2025',
       rating: 5,
       text: 'We\'ve been doing the same bedtime routine for six months and she looks forward to turning Luna on every single night. It\'s become the signal that says "sleep time now" without us having to say a word.',
@@ -168,7 +149,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'luna-3',
       reviewer: 'Amy S.',
-      location: 'Brisbane',
       date: 'March 2025',
       rating: 5,
       text: 'Bought after seeing it on a friend\'s shelf. Couldn\'t believe how soft the silicone is — it\'s basically a cuddly toy and a night light in one. My daughter insisted on bringing it to grandma\'s.',
@@ -176,7 +156,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'luna-4',
       reviewer: 'Charlotte F.',
-      location: 'Perth',
       date: 'February 2025',
       rating: 5,
       text: 'The bunny proportions are just right. Not too big, not too small — fits perfectly on a bedside table without dominating the room. The glow through the ears is genuinely magical at night.',
@@ -187,7 +166,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'mocha-1',
       reviewer: 'Daniel R.',
-      location: 'Sydney',
       date: 'May 2025',
       rating: 5,
       text: 'I know this is technically a kids\' night light but I have one on my desk at work. It just makes the space feel warmer. Zero regrets. My colleagues have all asked where I got it.',
@@ -195,7 +173,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'mocha-2',
       reviewer: 'Olivia H.',
-      location: 'Melbourne',
       date: 'April 2025',
       rating: 5,
       text: 'My four-year-old calls it "the coffee man" and it\'s his most prized possession. We\'ve already bought two as gifts for friends\' kids. The mug shape with little legs is just too good.',
@@ -203,7 +180,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'mocha-3',
       reviewer: 'Jack M.',
-      location: 'Brisbane',
       date: 'March 2025',
       rating: 4,
       text: 'Unique design that gets everyone talking. Mocha sits on our kitchen shelf and glows all evening. The warm amber light pairs so well with the mug character. Really clever product.',
@@ -211,7 +187,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'mocha-4',
       reviewer: 'Kate L.',
-      location: 'Adelaide',
       date: 'February 2025',
       rating: 5,
       text: 'It was a gift from my daughter\'s teacher and it genuinely made us all laugh when we opened it. Now she won\'t go to bed without "her coffee." The double-tap night mode is perfect.',
@@ -222,7 +197,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'nimbus-1',
       reviewer: 'Sarah B.',
-      location: 'Sydney',
       date: 'May 2025',
       rating: 5,
       text: 'This was the first Nightling we bought. We now own four. It started everything. Nimbus has been on every single night for two years and the charge still lasts the whole night.',
@@ -230,7 +204,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'nimbus-2',
       reviewer: 'Tom F.',
-      location: 'Melbourne',
       date: 'March 2025',
       rating: 5,
       text: 'Two years on and Nimbus still charges to full in about two hours and lasts all night. Genuinely impressive quality for something that\'s handled by a four-year-old every single day.',
@@ -238,7 +211,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'nimbus-3',
       reviewer: 'Rachel K.',
-      location: 'Perth',
       date: 'February 2025',
       rating: 5,
       text: 'I bought this for a newborn and it\'s still being used by the same child at age four. Outlasted three other night lights. The silicone still looks and feels brand new.',
@@ -246,7 +218,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'nimbus-4',
       reviewer: 'Emma T.',
-      location: 'Auckland',
       date: 'January 2025',
       rating: 5,
       text: 'The happiest little cloud I\'ve ever seen. The face is perfectly designed — just enough detail without being overwhelming. Sits on the shelf and makes the whole room feel cosy.',
@@ -257,7 +228,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'pepper-1',
       reviewer: 'Anna W.',
-      location: 'Melbourne',
       date: 'April 2025',
       rating: 5,
       text: 'Pepper is for the kids who don\'t want pink bunnies and yellow ducks. My daughter pointed at the screen and said "that one, that one." It\'s been her bedtime companion every night since.',
@@ -265,7 +235,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'pepper-2',
       reviewer: 'James S.',
-      location: 'Sydney',
       date: 'March 2025',
       rating: 5,
       text: 'The black detailing on the cream silicone is beautifully executed. It genuinely looks handmade quality. Pepper is the most characterful thing on my son\'s shelf.',
@@ -273,7 +242,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'pepper-3',
       reviewer: 'Chris P.',
-      location: 'Brisbane',
       date: 'February 2025',
       rating: 4,
       text: 'We almost didn\'t buy Pepper because we weren\'t sure about the colour. Don\'t make that mistake. It\'s the most striking light in the range and the glow is beautifully warm.',
@@ -281,7 +249,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'pepper-4',
       reviewer: 'Laura M.',
-      location: 'Adelaide',
       date: 'January 2025',
       rating: 5,
       text: 'My son calls Pepper "the sleepy sheep" and insists on tucking them in before he goes to bed. Pepper gets a little blanket every single night. It\'s the sweetest bedtime ritual.',
@@ -292,7 +259,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'rex-1',
       reviewer: 'Daniel W.',
-      location: 'Sydney',
       date: 'May 2025',
       rating: 5,
       text: 'Rex is for kids who\'ve outgrown the soft pastel stage. My five-year-old called it "the coolest thing in the world" and hasn\'t looked back. The green spikes are a perfect touch.',
@@ -300,7 +266,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'rex-2',
       reviewer: 'Sam K.',
-      location: 'Brisbane',
       date: 'April 2025',
       rating: 4,
       text: 'The little green spikes are well done — detailed but still soft and squishable. My kids argue over who gets to hold Rex at bedtime. Solved by getting two.',
@@ -308,7 +273,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'rex-3',
       reviewer: 'Michelle T.',
-      location: 'Melbourne',
       date: 'March 2025',
       rating: 4,
       text: 'We wanted something a bit more "boyish" (my son\'s words, not mine) and Rex was perfect. He takes it everywhere. The battery life has been genuinely impressive.',
@@ -316,7 +280,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'rex-4',
       reviewer: 'Mark R.',
-      location: 'Gold Coast',
       date: 'February 2025',
       rating: 5,
       text: 'The glow through the white silicone body is warm and even. Rex has replaced our bedroom ceiling light for nighttime. My son is obsessed and so, honestly, am I.',
@@ -327,7 +290,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'sunny-1',
       reviewer: 'Sophie K.',
-      location: 'Sydney',
       date: 'May 2025',
       rating: 5,
       text: 'Sunny is my son\'s bath buddy and night light — bath shelf during the day, bedside table at night. The silicone is completely wipe-clean, which is essential for a two-year-old\'s bathroom.',
@@ -335,7 +297,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'sunny-2',
       reviewer: 'Emma L.',
-      location: 'Melbourne',
       date: 'April 2025',
       rating: 5,
       text: 'If you know a kid who loves rubber ducks, this is the gift. My daughter screamed with pure joy when she opened it. We\'ve now bought three more as gifts for birthday parties.',
@@ -343,7 +304,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'sunny-3',
       reviewer: 'Ryan B.',
-      location: 'Brisbane',
       date: 'March 2025',
       rating: 5,
       text: 'The duck shape is iconic. Sunny sits on the windowsill and every person who visits asks where we got it. The warmth of the glow in night mode is absolutely perfect.',
@@ -351,7 +311,6 @@ export const reviews: Record<string, Review[]> = {
     {
       id: 'sunny-4',
       reviewer: 'Kate F.',
-      location: 'Auckland',
       date: 'February 2025',
       rating: 5,
       text: 'My 2-year-old woke at 3am and instead of crying just looked at Sunny and went straight back to sleep. I genuinely don\'t know what kind of magic this is. Worth every single cent.',

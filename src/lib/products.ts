@@ -6,8 +6,6 @@ export type Light = {
   mood: string;
   price: number; // in cents AUD
   features: string[];
-  dimensions: string;
-  battery: string;
   images: {
     off: string;
     on: string;
@@ -43,8 +41,6 @@ export const lights: Light[] = [
       'USB-C rechargeable (cable included)',
       'BPA-free food-grade silicone',
     ],
-    dimensions: '160mm W × 120mm H × 95mm D',
-    battery: '12 hours (mid) / 6 hours (high)',
     images: IMG('blu-the-whale'),
     inBox: ['Blu the Whale light', 'USB-C charging cable', 'Care guide'],
     pairsWell: ['nimbus-the-cloud', 'luna-the-bunny'],
@@ -65,8 +61,6 @@ export const lights: Light[] = [
       'USB-C rechargeable (cable included)',
       'BPA-free food-grade silicone',
     ],
-    dimensions: '155mm W × 110mm H × 85mm D',
-    battery: '12 hours (mid) / 6 hours (high)',
     images: IMG('coco-the-capybara'),
     inBox: ['Coco the Capybara light', 'USB-C charging cable', 'Care guide'],
     pairsWell: ['mocha-the-coffee', 'sunny-the-duck'],
@@ -87,8 +81,6 @@ export const lights: Light[] = [
       'USB-C rechargeable (cable included)',
       'BPA-free food-grade silicone',
     ],
-    dimensions: '130mm W × 150mm H × 90mm D',
-    battery: '12 hours (mid) / 6 hours (high)',
     images: IMG('cooper-the-puppy'),
     inBox: ['Cooper the Puppy light', 'USB-C charging cable', 'Care guide'],
     pairsWell: ['honey-the-bear', 'coco-the-capybara'],
@@ -110,8 +102,6 @@ export const lights: Light[] = [
       'USB-C rechargeable (cable included)',
       'BPA-free food-grade silicone',
     ],
-    dimensions: '125mm W × 155mm H × 90mm D',
-    battery: '12 hours (mid) / 6 hours (high)',
     images: IMG('honey-the-bear'),
     inBox: ['Honey the Bear light', 'USB-C charging cable', 'Care guide'],
     pairsWell: ['cooper-the-puppy', 'pepper-the-black-sheep'],
@@ -132,8 +122,6 @@ export const lights: Light[] = [
       'USB-C rechargeable (cable included)',
       'BPA-free food-grade silicone',
     ],
-    dimensions: '110mm W × 185mm H × 85mm D',
-    battery: '12 hours (mid) / 6 hours (high)',
     images: IMG('luna-the-bunny'),
     inBox: ['Luna the Bunny light', 'USB-C charging cable', 'Care guide'],
     pairsWell: ['blu-the-whale', 'nimbus-the-cloud'],
@@ -155,8 +143,6 @@ export const lights: Light[] = [
       'USB-C rechargeable (cable included)',
       'BPA-free food-grade silicone',
     ],
-    dimensions: '115mm W × 145mm H × 100mm D',
-    battery: '10 hours (mid) / 5 hours (high)',
     images: IMG('mocha-the-coffee'),
     inBox: ['Mocha the Coffee light', 'USB-C charging cable', 'Care guide'],
     pairsWell: ['coco-the-capybara', 'luna-the-bunny'],
@@ -178,8 +164,6 @@ export const lights: Light[] = [
       'BPA-free food-grade silicone',
       'Soft silicone that won\'t scratch shelves or floors',
     ],
-    dimensions: '140mm W × 130mm H × 105mm D',
-    battery: '12 hours (mid) / 6 hours (high)',
     images: IMG('nimbus-the-cloud'),
     inBox: ['Nimbus the Cloud light', 'USB-C charging cable', 'Care guide'],
     pairsWell: ['blu-the-whale', 'luna-the-bunny'],
@@ -200,8 +184,6 @@ export const lights: Light[] = [
       'USB-C rechargeable (cable included)',
       'BPA-free food-grade silicone',
     ],
-    dimensions: '135mm W × 150mm H × 95mm D',
-    battery: '12 hours (mid) / 6 hours (high)',
     images: IMG('pepper-the-black-sheep'),
     inBox: ['Pepper the Black Sheep light', 'USB-C charging cable', 'Care guide'],
     pairsWell: ['honey-the-bear', 'cooper-the-puppy'],
@@ -223,8 +205,6 @@ export const lights: Light[] = [
       'USB-C rechargeable (cable included)',
       'BPA-free food-grade silicone',
     ],
-    dimensions: '150mm W × 155mm H × 95mm D',
-    battery: '12 hours (mid) / 6 hours (high)',
     images: IMG('rex-the-dinosaur'),
     inBox: ['Rex the Dinosaur light', 'USB-C charging cable', 'Care guide'],
     pairsWell: ['sunny-the-duck', 'honey-the-bear'],
@@ -245,8 +225,6 @@ export const lights: Light[] = [
       'USB-C rechargeable (cable included)',
       'BPA-free food-grade silicone',
     ],
-    dimensions: '140mm W × 140mm H × 95mm D',
-    battery: '12 hours (mid) / 6 hours (high)',
     images: IMG('sunny-the-duck'),
     inBox: ['Sunny the Duck light', 'USB-C charging cable', 'Care guide'],
     pairsWell: ['rex-the-dinosaur', 'coco-the-capybara'],

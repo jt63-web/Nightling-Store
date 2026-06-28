@@ -64,21 +64,21 @@ export function LightTile({ light }: LightTileProps) {
           </div>
 
           {/* Info */}
-          <div className="p-5">
+          <div className="p-3 sm:p-5">
             <h3
-              className="font-display text-xl mb-1 mode-transition"
+              className="font-display text-base sm:text-xl mb-0.5 sm:mb-1 mode-transition leading-tight"
               style={{ color: 'var(--text-primary)' }}
             >
               {light.name}
             </h3>
             <p
-              className="font-body text-sm mb-4 mode-transition"
+              className="font-body text-xs sm:text-sm mb-2 sm:mb-4 mode-transition hidden sm:block"
               style={{ color: 'var(--text-secondary)' }}
             >
               {light.tagline}
             </p>
             <span
-              className="font-body font-semibold mode-transition"
+              className="font-body font-semibold text-sm sm:text-base mode-transition"
               style={{ color: 'var(--text-primary)' }}
             >
               {price}

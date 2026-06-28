@@ -5,9 +5,9 @@ import { CloudLogo } from '@/components/shared/CloudLogo';
 const links = {
   Shop: [
     { href: '/collection', label: 'All lights' },
-    { href: '/collection/sleepy-clouds', label: 'Sleepy Clouds' },
-    { href: '/collection/cosmic-friends', label: 'Cosmic Friends' },
-    { href: '/collection/forest-babies', label: 'Forest Babies' },
+    { href: '/collection/light/honey-the-bear', label: 'Honey the Bear' },
+    { href: '/collection/light/nimbus-the-cloud', label: 'Nimbus the Cloud' },
+    { href: '/collection/light/cooper-the-puppy', label: 'Cooper the Puppy' },
   ],
   Learn: [
     { href: '/journal', label: 'Sleep Journal' },

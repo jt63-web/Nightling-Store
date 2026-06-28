@@ -51,6 +51,7 @@ export function LightDetail({ light, related }: LightDetailProps) {
 
   const [activeImage, setActiveImage] = useState(isNight ? 1 : 0);
   const [added, setAdded] = useState(false);
+  const [stickyAdded, setStickyAdded] = useState(false);
 
   function handleAddToCart() {
     addItem({ slug: light.slug, name: light.name, price: light.price, image: light.images.off });
@@ -58,8 +59,58 @@ export function LightDetail({ light, related }: LightDetailProps) {
     setTimeout(() => setAdded(false), 2000);
   }
 
+  function handleStickyAddToCart() {
+    addItem({ slug: light.slug, name: light.name, price: light.price, image: light.images.off });
+    setStickyAdded(true);
+    setTimeout(() => setStickyAdded(false), 2000);
+  }
+
   return (
-    <main>
+    <>
+    {/* Sticky mobile add-to-cart bar */}
+    <div
+      className="lg:hidden fixed bottom-0 left-0 right-0 z-30 px-4 py-3 border-t mode-transition"
+      style={{
+        backgroundColor: 'var(--bg-page)',
+        borderColor: 'var(--border)',
+        boxShadow: '0 -4px 24px rgba(0,0,0,0.08)',
+      }}
+    >
+      <div className="flex items-center gap-3">
+        <div className="flex-1 min-w-0">
+          <p className="font-display text-sm truncate mode-transition" style={{ color: 'var(--text-primary)' }}>
+            {light.name}
+          </p>
+          <p className="font-body text-xs mode-transition" style={{ color: 'var(--text-secondary)' }}>
+            {price}
+          </p>
+        </div>
+        <motion.button
+          onClick={handleStickyAddToCart}
+          whileTap={{ scale: 0.97 }}
+          className="flex-shrink-0 px-5 py-3 rounded-xl font-body font-semibold text-sm mode-transition"
+          style={{
+            backgroundColor: isNight ? 'rgba(255,185,87,0.15)' : 'var(--text-primary)',
+            color: isNight ? 'var(--accent)' : 'var(--bg-page)',
+            border: isNight ? '1.5px solid var(--accent)' : 'none',
+            minWidth: 140,
+          }}
+        >
+          <AnimatePresence mode="wait">
+            <motion.span
+              key={stickyAdded ? 'added' : 'add'}
+              initial={{ opacity: 0, y: 4 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -4 }}
+              transition={{ duration: 0.2 }}
+            >
+              {stickyAdded ? '✓ Added' : 'Add to cart'}
+            </motion.span>
+          </AnimatePresence>
+        </motion.button>
+      </div>
+    </div>
+    <main className="pb-20 lg:pb-0">
       {/* Breadcrumb */}
       <div className="max-w-7xl mx-auto px-6 pt-8 pb-0">
         <nav className="flex gap-2 font-body text-xs mode-transition" style={{ color: 'var(--text-secondary)' }}>
@@ -202,21 +253,6 @@ export function LightDetail({ light, related }: LightDetailProps) {
             {light.description}
           </p>
 
-          <div className="grid grid-cols-2 gap-3">
-            {[
-              { label: 'Dimensions', value: light.dimensions },
-              { label: 'Battery', value: light.battery },
-            ].map(({ label, value }) => (
-              <div
-                key={label}
-                className="p-4 rounded-2xl mode-transition"
-                style={{ backgroundColor: 'var(--bg-card)', border: '1px solid var(--border)' }}
-              >
-                <p className="font-body text-xs uppercase tracking-wider mb-1 mode-transition" style={{ color: 'var(--text-secondary)', opacity: 0.6 }}>{label}</p>
-                <p className="font-body text-sm mode-transition" style={{ color: 'var(--text-primary)' }}>{value}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
 
@@ -283,5 +319,6 @@ export function LightDetail({ light, related }: LightDetailProps) {
         </section>
       )}
     </main>
+    </>
   );
 }

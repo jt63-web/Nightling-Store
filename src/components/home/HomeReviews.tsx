@@ -9,7 +9,6 @@ const TOTAL_REVIEWS = 1526;
 const HOME_REVIEWS = [
   {
     reviewer: 'Sophie M.',
-    location: 'Melbourne',
     product: 'Honey the Bear',
     productSlug: 'honey-the-bear',
     date: 'April 2025',
@@ -18,7 +17,6 @@ const HOME_REVIEWS = [
   },
   {
     reviewer: 'Jessica W.',
-    location: 'Sydney',
     product: 'Luna the Bunny',
     productSlug: 'luna-the-bunny',
     date: 'May 2025',
@@ -27,7 +25,6 @@ const HOME_REVIEWS = [
   },
   {
     reviewer: 'Tom F.',
-    location: 'Melbourne',
     product: 'Nimbus the Cloud',
     productSlug: 'nimbus-the-cloud',
     date: 'March 2025',
@@ -36,7 +33,6 @@ const HOME_REVIEWS = [
   },
   {
     reviewer: 'Kate F.',
-    location: 'Auckland',
     product: 'Sunny the Duck',
     productSlug: 'sunny-the-duck',
     date: 'February 2025',
@@ -45,7 +41,6 @@ const HOME_REVIEWS = [
   },
   {
     reviewer: 'Anna W.',
-    location: 'Melbourne',
     product: 'Pepper the Black Sheep',
     productSlug: 'pepper-the-black-sheep',
     date: 'April 2025',
@@ -54,7 +49,6 @@ const HOME_REVIEWS = [
   },
   {
     reviewer: 'Emma R.',
-    location: 'Sydney',
     product: 'Cooper the Puppy',
     productSlug: 'cooper-the-puppy',
     date: 'May 2025',
@@ -157,20 +151,12 @@ export function HomeReviews() {
                 className="flex items-center justify-between pt-4 border-t mode-transition"
                 style={{ borderColor: 'var(--border)' }}
               >
-                <div>
-                  <p
-                    className="font-body text-xs font-semibold mode-transition"
-                    style={{ color: 'var(--text-primary)' }}
-                  >
-                    {review.reviewer}
-                  </p>
-                  <p
-                    className="font-body text-xs mode-transition"
-                    style={{ color: 'var(--text-secondary)', opacity: 0.6 }}
-                  >
-                    {review.location}
-                  </p>
-                </div>
+                <p
+                  className="font-body text-xs font-semibold mode-transition"
+                  style={{ color: 'var(--text-primary)' }}
+                >
+                  {review.reviewer}
+                </p>
                 <Link
                   href={`/collection/light/${review.productSlug}`}
                   className="font-body text-xs hover:opacity-70 transition-opacity mode-transition"
