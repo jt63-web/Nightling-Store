@@ -67,7 +67,7 @@ export function GlowDemo() {
         </div>
 
         <p className="font-body text-sm leading-relaxed text-center mt-12 max-w-sm mx-auto mode-transition" style={{ color: 'var(--text-secondary)' }}>
-          One tap cycles through all three brightness levels. All Nightling lights glow at a warm, gentle tone that won't disrupt sleep.
+          One tap cycles through all three brightness levels. All Nightling lights glow at a warm, gentle tone that won&apos;t disrupt sleep.
         </p>
       </div>
     </section>
