@@ -95,6 +95,11 @@ export function LightTile({ light }: LightTileProps) {
             >
               {price}
             </span>
+            {light.lowStock && (
+              <p className="font-body text-xs mt-1 font-medium" style={{ color: '#C0622B' }}>
+                Only {light.lowStock} left
+              </p>
+            )}
           </div>
         </div>
       </Link>

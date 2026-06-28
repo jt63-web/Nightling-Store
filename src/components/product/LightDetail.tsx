@@ -13,6 +13,7 @@ import type { Light } from '@/lib/products';
 import { GlowDemo } from './GlowDemo';
 import { SafetyDeck } from './SafetyDeck';
 import { ProductReviews } from './ProductReviews';
+import { ProductFAQ } from './ProductFAQ';
 
 interface LightDetailProps {
   light: Light;
@@ -224,6 +225,13 @@ export function LightDetail({ light, related }: LightDetailProps) {
             {price}
           </span>
 
+          {/* Low stock */}
+          {light.lowStock && (
+            <p className="font-body text-sm font-semibold" style={{ color: '#C0622B' }}>
+              ⚠ Only {light.lowStock} left in stock — order soon
+            </p>
+          )}
+
           {/* Add to cart */}
           <motion.button
             onClick={handleAddToCart}
@@ -247,6 +255,24 @@ export function LightDetail({ light, related }: LightDetailProps) {
               </motion.span>
             </AnimatePresence>
           </motion.button>
+
+          {/* Trust strip */}
+          <div
+            className="rounded-2xl p-4 grid grid-cols-2 gap-3 mode-transition"
+            style={{ backgroundColor: 'var(--bg-card)', border: '1px solid var(--border)' }}
+          >
+            {[
+              { icon: '✈', label: 'Free shipping, always' },
+              { icon: '⚡', label: 'Ships in 1 business day' },
+              { icon: '↩', label: '30-day returns on faulty items' },
+              { icon: '◉', label: 'Secure checkout' },
+            ].map(({ icon, label }) => (
+              <div key={label} className="flex items-center gap-2 font-body text-xs mode-transition" style={{ color: 'var(--text-secondary)' }}>
+                <span style={{ color: 'var(--accent)' }}>{icon}</span>
+                {label}
+              </div>
+            ))}
+          </div>
 
           {/* Key features */}
           <div
@@ -286,6 +312,16 @@ export function LightDetail({ light, related }: LightDetailProps) {
         </h2>
         <div className="max-w-2xl">
           <SafetyDeck />
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="max-w-7xl mx-auto px-6 pb-16">
+        <h2 className="font-display text-3xl mb-10 mode-transition" style={{ color: 'var(--text-primary)' }}>
+          Common questions
+        </h2>
+        <div className="max-w-2xl">
+          <ProductFAQ />
         </div>
       </section>
 

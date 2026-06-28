@@ -15,6 +15,7 @@ export type Light = {
   reviewCount: number;
   rating: number; // 1–5
   tag?: 'new' | 'bestseller';
+  lowStock?: number;
 };
 
 const IMG = (slug: string) => ({
@@ -159,6 +160,7 @@ export const lights: Light[] = [
     pairsWell: ['coco-the-capybara', 'luna-the-bunny'],
     reviewCount: 54,
     rating: 4.7,
+    lowStock: 4,
   },
   {
     slug: 'pepper-the-black-sheep',
@@ -181,6 +183,7 @@ export const lights: Light[] = [
     pairsWell: ['honey-the-bear', 'cooper-the-puppy'],
     reviewCount: 73,
     rating: 4.5,
+    lowStock: 3,
   },
   {
     slug: 'rex-the-dinosaur',
