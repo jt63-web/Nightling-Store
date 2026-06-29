@@ -21,6 +21,7 @@ interface CartStore {
   toggleCart: () => void;
   totalItems: () => number;
   subtotalCents: () => number;
+  discountCents: () => number;
 }
 
 export const useCartStore = create<CartStore>()(
@@ -64,6 +65,16 @@ export const useCartStore = create<CartStore>()(
       totalItems: () => get().items.reduce((sum, i) => sum + i.qty, 0),
       subtotalCents: () =>
         get().items.reduce((sum, i) => sum + i.price * i.qty, 0),
+      discountCents: () => {
+        const allUnits = get().items
+          .flatMap((i) => Array<number>(i.qty).fill(i.price))
+          .sort((a, b) => b - a);
+        let discount = 0;
+        for (let i = 1; i < allUnits.length; i += 2) {
+          discount += Math.round(allUnits[i] * 0.1);
+        }
+        return discount;
+      },
     }),
     {
       name: 'nightling-cart-v2',

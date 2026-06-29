@@ -207,7 +207,7 @@ export function LightDetail({ light, related }: LightDetailProps) {
               </div>
             )}
             <h1 className="font-display text-4xl lg:text-5xl mb-3 mode-transition" style={{ color: 'var(--text-primary)' }}>
-              {light.name}
+              The ORIGINAL {light.name} Night Light
             </h1>
             <p className="font-body text-lg leading-relaxed mode-transition" style={{ color: 'var(--text-secondary)' }}>
               {light.tagline}
@@ -224,6 +224,20 @@ export function LightDetail({ light, related }: LightDetailProps) {
           <span className="font-display text-3xl mode-transition" style={{ color: 'var(--text-primary)' }}>
             {price}
           </span>
+
+          {/* BOGO promo */}
+          <div
+            className="rounded-2xl px-4 py-3.5 mode-transition"
+            style={{ backgroundColor: 'var(--accent)', opacity: 0.97 }}
+          >
+            <p className="font-body font-bold text-sm" style={{ color: 'var(--midnight, #1F2A44)' }}>
+              🎁 Bundle &amp; Save — Buy 1, Get 1 10% Off
+            </p>
+            <p className="font-body text-xs mt-1" style={{ color: 'var(--midnight, #1F2A44)', opacity: 0.75 }}>
+              Add a second light and save on the second unit — two lights for only{' '}
+              <strong>{formatPrice(light.price + Math.round(light.price * 0.9), currency as Currency, rate)}</strong>
+            </p>
+          </div>
 
           {/* Low stock */}
           {light.lowStock && (
@@ -255,6 +269,11 @@ export function LightDetail({ light, related }: LightDetailProps) {
               </motion.span>
             </AnimatePresence>
           </motion.button>
+
+          {/* Authenticity copy */}
+          <p className="font-body text-xs text-center mode-transition" style={{ color: 'var(--text-secondary)', opacity: 0.7 }}>
+            Don&apos;t settle for cheap imitations. Shop the Original. · Premium Quality Guaranteed.
+          </p>
 
           {/* Trust strip */}
           <div

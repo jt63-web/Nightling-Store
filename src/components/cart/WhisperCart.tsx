@@ -10,7 +10,7 @@ import type { Currency } from '@/lib/currency-helpers';
 import { FreeShippingBar } from './FreeShippingBar';
 
 export function WhisperCart() {
-  const { items, isOpen, closeCart, removeItem, updateQty, subtotalCents } = useCartStore();
+  const { items, isOpen, closeCart, removeItem, updateQty, subtotalCents, discountCents } = useCartStore();
   const { currency, getRate } = useCurrencyStore();
   const rate = getRate();
 
@@ -173,8 +173,26 @@ export function WhisperCart() {
                   <span className="font-body text-sm mode-transition" style={{ color: 'var(--text-secondary)' }}>
                     Subtotal
                   </span>
-                  <span className="font-body font-semibold mode-transition" style={{ color: 'var(--text-primary)' }}>
+                  <span className="font-body text-sm mode-transition" style={{ color: 'var(--text-secondary)' }}>
                     {formatPrice(subtotalCents(), currency as Currency, rate)}
+                  </span>
+                </div>
+                {discountCents() > 0 && (
+                  <div className="flex justify-between items-center">
+                    <span className="font-body text-sm mode-transition" style={{ color: '#2a9d5c' }}>
+                      🎁 Buy 1 Get 1 10% Off
+                    </span>
+                    <span className="font-body text-sm font-semibold" style={{ color: '#2a9d5c' }}>
+                      -{formatPrice(discountCents(), currency as Currency, rate)}
+                    </span>
+                  </div>
+                )}
+                <div className="flex justify-between items-center border-t pt-3 mode-transition" style={{ borderColor: 'var(--border)' }}>
+                  <span className="font-body font-semibold mode-transition" style={{ color: 'var(--text-primary)' }}>
+                    Total
+                  </span>
+                  <span className="font-body font-semibold mode-transition" style={{ color: 'var(--text-primary)' }}>
+                    {formatPrice(subtotalCents() - discountCents(), currency as Currency, rate)}
                   </span>
                 </div>
                 <button
