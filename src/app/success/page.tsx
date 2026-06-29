@@ -21,7 +21,7 @@ export default function SuccessPage() {
           className="font-body text-lg leading-relaxed mb-8 mode-transition"
           style={{ color: 'var(--text-secondary)' }}
         >
-          Thank you for your order. Your Nightling light is on its way — we'll dispatch within 1 business day.
+          Thank you for your order. Your Nightling light is on its way &mdash; we&apos;ll dispatch within 1 business day.
         </p>
         <Link
           href="/collection"
