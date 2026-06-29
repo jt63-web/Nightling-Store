@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Terms & Conditions — Nightling',
-  description: 'Nightling terms of sale, returns, and use.',
+  description: 'Nightling terms of sale and use.',
 };
 
 export default function TermsPage() {
@@ -19,7 +19,7 @@ export default function TermsPage() {
         {[
           {
             heading: 'Orders',
-            body: 'By placing an order, you confirm that all information provided is accurate and complete. Nightling reserves the right to cancel any order at its discretion, in which case a full refund will be issued promptly.',
+            body: 'By placing an order, you confirm that all information provided is accurate and complete. Nightling reserves the right to cancel any order at its discretion, in which case you will be notified promptly.',
           },
           {
             heading: 'Pricing',
@@ -28,10 +28,6 @@ export default function TermsPage() {
           {
             heading: 'Shipping',
             body: 'We dispatch orders within 1 business day of payment confirmation. Standard shipping takes 4–10 business days depending on your location. Shipping is always free with no minimum order. Nightling is not responsible or liable for shipping delays caused by carriers, weather events, customs processing, or any other factors outside our control. Once an order has been dispatched, delivery timeframes are estimates only.',
-          },
-          {
-            heading: 'Returns and refunds',
-            body: 'We accept returns within 30 days of delivery for items that arrive faulty or damaged. We do not accept returns for change of mind. To initiate a return, contact us at returns@nightling.com with your order number and clear photos of the fault or damage. Return shipping costs for faulty or damaged items will be covered by Nightling. Refunds are processed to the original payment method within 5–10 business days of receiving the returned item.',
           },
           {
             heading: 'Product use',

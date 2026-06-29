@@ -24,10 +24,6 @@ const FAQS = [
     q: 'Do you ship internationally?',
     a: 'Yes — we ship worldwide. Shipping is always free, with no minimum order and no code needed. Standard delivery takes 4–10 business days and we dispatch within 1 business day of your order.',
   },
-  {
-    q: 'What is your returns policy?',
-    a: 'We accept returns within 30 days of delivery for items that arrive faulty or damaged. Please contact us at returns@nightling.com with your order number and photos of the issue and we will sort it out promptly. We are unable to accept returns for change of mind.',
-  },
 ];
 
 export function ProductFAQ() {

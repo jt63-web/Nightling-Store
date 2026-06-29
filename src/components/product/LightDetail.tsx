@@ -283,7 +283,7 @@ export function LightDetail({ light, related }: LightDetailProps) {
             {[
               { icon: '✈', label: 'Free shipping, always' },
               { icon: '⚡', label: 'Ships in 1 business day' },
-              { icon: '↩', label: '30-day returns on faulty items' },
+              { icon: '✦', label: 'Premium quality guaranteed' },
               { icon: '◉', label: 'Secure checkout' },
             ].map(({ icon, label }) => (
               <div key={label} className="flex items-center gap-2 font-body text-xs mode-transition" style={{ color: 'var(--text-secondary)' }}>
