@@ -207,7 +207,7 @@ export function LightDetail({ light, related }: LightDetailProps) {
               </div>
             )}
             <h1 className="font-display text-4xl lg:text-5xl mb-3 mode-transition" style={{ color: 'var(--text-primary)' }}>
-              The ORIGINAL {light.name} Night Light
+              {light.name}
             </h1>
             <p className="font-body text-lg leading-relaxed mode-transition" style={{ color: 'var(--text-secondary)' }}>
               {light.tagline}

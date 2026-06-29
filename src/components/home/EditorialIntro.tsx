@@ -17,7 +17,7 @@ export function EditorialIntro() {
             className="font-body text-xs tracking-widest uppercase mb-6 mode-transition"
             style={{ color: 'var(--text-secondary)', opacity: 0.6 }}
           >
-            Why a night light matters
+            The original · since 2024
           </p>
           <h2
             className="font-display text-4xl lg:text-5xl mb-8 text-balance mode-transition"
