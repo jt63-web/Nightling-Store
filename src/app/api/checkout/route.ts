@@ -50,6 +50,14 @@ export async function POST(req: NextRequest) {
       payment_method_types: ['card'],
       line_items: lineItems,
       mode: 'payment',
+      shipping_address_collection: {
+        allowed_countries: [
+          'US', 'AU', 'GB', 'CA', 'NZ', 'SG', 'IE', 'DE', 'FR', 'NL',
+          'SE', 'NO', 'DK', 'FI', 'IT', 'ES', 'PT', 'BE', 'AT', 'CH',
+          'JP', 'HK', 'AE', 'ZA', 'IN',
+        ],
+      },
+      phone_number_collection: { enabled: true },
       success_url: `${baseUrl}/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${baseUrl}/collection`,
     };
