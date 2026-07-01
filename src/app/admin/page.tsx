@@ -123,7 +123,7 @@ export default function AdminPage() {
   const [preset, setPreset]             = useState('7d');
   const [customFrom, setCustomFrom]     = useState('');
   const [customTo, setCustomTo]         = useState('');
-  const [displayCurrency, setDisplayCurrency] = useState('USD');
+  const [displayCurrency, setDisplayCurrency] = useState('AUD');
   const [rates, setRates]               = useState<Record<string, number>>({ USD: 1 });
   const [lastRefreshed, setLastRefreshed] = useState<Date | null>(null);
 
